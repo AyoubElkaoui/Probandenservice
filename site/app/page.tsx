@@ -13,71 +13,66 @@ import styles from './page.module.css';
 export default function Home() {
   return (
     <>
-      {/* ── HERO — split layout: tekst links / auto product shot rechts ── */}
+      {/* ── HERO ── */}
       <section className={styles.hero}>
 
-        {/* LINKS: donkere sectie met tekst + effecten */}
-        <div className={styles.heroLeft}>
-          {/* Subtiele lichtsporen */}
-          <div className={styles.speedLines} aria-hidden="true" />
-          {/* Roterend wiel — op de tekst-achtergrond */}
-          <div className={styles.tireWrap} aria-hidden="true">
-            <TireRim size={520} className={styles.tireRim} />
-          </div>
-
-          <div className={styles.heroContent}>
-            <div className={styles.heroFlags}>
-              <span className={styles.flagSpoed}>● 24/7 SPOED</span>
-              <span className={styles.flagInfo}>CULEMBORG · UTRECHT · NIEUWEGEIN</span>
-            </div>
-
-            <h1 className={styles.heroH1}>
-              BANDEN.<br />
-              UITLIJNEN.<br />
-              <span className={styles.red}>SPOED.</span>
-            </h1>
-
-            <p className={styles.heroLede}>
-              Lekke band midden in de nacht? Nieuwe banden nodig?
-              Of uitlijnen omdat je stuur trekt? Wij zijn er. Altijd.
-            </p>
-
-            <div className={styles.heroCtas}>
-              <Button href={`tel:${site.emergencyPhone.tel}`}>
-                Bel: {site.emergencyPhone.display}
-              </Button>
-              <Button href="/contact" variant="ghost">Maak een afspraak</Button>
-            </div>
-
-            <div className={styles.statRow}>
-              <div className={styles.stat}>
-                <div className={styles.statN}>5.0</div>
-                <div className={styles.statL}>Google · 158 reviews</div>
-              </div>
-              <div className={styles.stat}>
-                <div className={styles.statN}>24/7</div>
-                <div className={styles.statL}>bereikbaar</div>
-              </div>
-              <div className={styles.stat}>
-                <div className={styles.statN}>80</div>
-                <div className={styles.statL}>km/u tijdelijke band</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* RECHTS: Mercedes-AMG moodbild — velg close-up als product shot */}
-        <div className={styles.heroRight} aria-hidden="true">
-          {/* Fade overlay: naadloos blend links + top/bottom vignette */}
-          <div className={styles.heroAura} />
+        {/* Moodbild — zweeft vrij rechts, geen kolom, geen box */}
+        <div className={styles.heroImg} aria-hidden="true">
           <Image
             src="/moodbild-alpha.webp"
             alt=""
             fill
             priority
-            sizes="50vw"
-            style={{ objectFit: 'contain', objectPosition: 'center center' }}
+            sizes="60vw"
+            style={{ objectFit: 'contain', objectPosition: 'right center' }}
           />
+        </div>
+
+        {/* Gradient — tekst leesbaar, auto naadloos geïntegreerd */}
+        <div className={styles.heroOverlay} aria-hidden="true" />
+
+        {/* Sfeer: lichtsporen */}
+        <div className={styles.speedLines} aria-hidden="true" />
+
+        {/* Tekst — vrij gepositioneerd, z-index boven alles */}
+        <div className={styles.heroContent}>
+          <div className={styles.heroFlags}>
+            <span className={styles.flagSpoed}>● 24/7 SPOED</span>
+            <span className={styles.flagInfo}>CULEMBORG · UTRECHT · NIEUWEGEIN</span>
+          </div>
+
+          <h1 className={styles.heroH1}>
+            BANDEN.<br />
+            UITLIJNEN.<br />
+            <span className={styles.red}>SPOED.</span>
+          </h1>
+
+          <p className={styles.heroLede}>
+            Lekke band midden in de nacht? Nieuwe banden nodig?
+            Of uitlijnen omdat je stuur trekt? Wij zijn er. Altijd.
+          </p>
+
+          <div className={styles.heroCtas}>
+            <Button href={`tel:${site.emergencyPhone.tel}`}>
+              Bel: {site.emergencyPhone.display}
+            </Button>
+            <Button href="/contact" variant="ghost">Maak een afspraak</Button>
+          </div>
+
+          <div className={styles.statRow}>
+            <div className={styles.stat}>
+              <div className={styles.statN}>5.0</div>
+              <div className={styles.statL}>Google · 158 reviews</div>
+            </div>
+            <div className={styles.stat}>
+              <div className={styles.statN}>24/7</div>
+              <div className={styles.statL}>bereikbaar</div>
+            </div>
+            <div className={styles.stat}>
+              <div className={styles.statN}>80</div>
+              <div className={styles.statL}>km/u tijdelijke band</div>
+            </div>
+          </div>
         </div>
 
         <Stripe />
