@@ -16,11 +16,11 @@
   50%       { text-shadow: 0 0 60px rgba(228,0,43,0.5), 0 0 120px rgba(228,0,43,0.25); }
 }
 
-/* ────────────── Hero — free layout, geen kolommen ────────────── */
+/* ────────────── Hero ────────────── */
 
 .hero {
   position: relative;
-  min-height: 90vh;
+  min-height: 92vh;
   background: var(--bg);
   color: var(--text);
   overflow: hidden;
@@ -28,37 +28,31 @@
   align-items: center;
 }
 
-/* Moodbild zweeft vrij — absolute, rechts, geen kolomgrens */
+/* Moodbild: vult volledige hero, objectFit cover toont alleen de velg */
 .heroImg {
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 58%;
+  inset: 0;
   z-index: 0;
-  pointer-events: none;
 }
 
-/* Gradient — tekst leesbaar, auto naadloos geïntegreerd in het donker */
+/* Gradient: tekst leesbaar links, auto zichtbaar rechts */
 .heroOverlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
   background:
-    /* Links: pikzwart → fade weg over de auto */
     linear-gradient(
-      100deg,
+      105deg,
       rgba(10,10,11,1.0)  0%,
-      rgba(10,10,11,0.97) 30%,
-      rgba(10,10,11,0.75) 50%,
-      rgba(10,10,11,0.25) 70%,
-      rgba(10,10,11,0.0)  90%
+      rgba(10,10,11,0.98) 28%,
+      rgba(10,10,11,0.80) 48%,
+      rgba(10,10,11,0.30) 68%,
+      rgba(10,10,11,0.05) 85%,
+      transparent         100%
     ),
-    /* Boven: subtiele vignette */
-    linear-gradient(180deg, rgba(10,10,11,0.5) 0%, transparent 20%),
-    /* Onder: grondschaduw */
-    linear-gradient(0deg,   rgba(10,10,11,0.6) 0%, transparent 25%);
+    linear-gradient(180deg, rgba(10,10,11,0.45) 0%, transparent 18%),
+    linear-gradient(0deg,   rgba(10,10,11,0.55) 0%, transparent 22%);
 }
 
 /* Horizontale lichtsporen */
@@ -107,28 +101,20 @@
   100% { opacity: 0; transform: translateX(1%); }
 }
 
-/* Roterend wiel — zweeft tussen tekst en moodbild */
+/* Roterend wiel — links in achtergrond, NOOIT in het midden */
 .tireWrap {
   position: absolute;
-  left: 38%;
+  left: -120px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
   pointer-events: none;
-  opacity: 0.45;
+  opacity: 0.18;
 }
 
 .tireRim {
-  animation: spinWheel 22s linear infinite;
+  animation: spinWheel 28s linear infinite;
   display: block;
-}
-
-@media (max-width: 1100px) {
-  .tireWrap { left: 44%; opacity: 0.35; }
-}
-
-@media (max-width: 860px) {
-  .tireWrap { left: 50%; transform: translate(-50%, -50%); opacity: 0.25; }
 }
 
 @media (max-width: 640px) {
@@ -233,53 +219,37 @@
 
 /* ── Hero responsive ── */
 
-/* Tablet: moodbild iets kleiner */
-@media (max-width: 1100px) {
-  .heroImg { width: 65%; }
-  .heroH1  { font-size: clamp(56px, 8vw, 100px); }
-}
-
-/* Tablet portrait (<860px): auto op volle breedte achter tekst, sterkere overlay */
-@media (max-width: 860px) {
-  .heroImg { width: 100%; }
+@media (max-width: 900px) {
   .heroOverlay {
     background:
-      linear-gradient(100deg,
+      linear-gradient(105deg,
         rgba(10,10,11,1.0)  0%,
-        rgba(10,10,11,0.97) 35%,
-        rgba(10,10,11,0.82) 55%,
-        rgba(10,10,11,0.45) 80%,
-        rgba(10,10,11,0.2)  100%
+        rgba(10,10,11,0.98) 35%,
+        rgba(10,10,11,0.88) 55%,
+        rgba(10,10,11,0.6)  75%,
+        rgba(10,10,11,0.3)  100%
       ),
-      linear-gradient(180deg, rgba(10,10,11,0.55) 0%, transparent 20%),
-      linear-gradient(0deg,   rgba(10,10,11,0.65) 0%, transparent 25%);
+      linear-gradient(180deg, rgba(10,10,11,0.5) 0%, transparent 20%),
+      linear-gradient(0deg,   rgba(10,10,11,0.6) 0%, transparent 25%);
   }
-  .heroContent { max-width: 100%; }
   .heroH1 { font-size: clamp(52px, 10vw, 88px); }
 }
 
-/* Mobile (<640px) */
 @media (max-width: 640px) {
   .hero { min-height: 100svh; align-items: flex-start; }
-  .heroImg { width: 100%; opacity: 0.7; }
   .heroOverlay {
-    background: linear-gradient(
-      180deg,
-      rgba(10,10,11,0.5)  0%,
-      rgba(10,10,11,0.15) 40%,
-      rgba(10,10,11,0.7)  80%,
-      rgba(10,10,11,0.95) 100%
-    ),
-    linear-gradient(100deg, rgba(10,10,11,0.92) 0%, rgba(10,10,11,0.6) 50%, transparent 100%);
+    background:
+      rgba(10,10,11,0.72),
+      linear-gradient(105deg, rgba(10,10,11,0.98) 0%, rgba(10,10,11,0.7) 60%, rgba(10,10,11,0.3) 100%),
+      linear-gradient(0deg, rgba(10,10,11,0.8) 0%, transparent 30%);
   }
   .heroContent { padding: 52px 20px 44px; }
   .heroH1 { font-size: clamp(46px, 13vw, 72px); }
-  .heroLede { font-size: 16px; margin-top: 18px; }
-  .heroCtas { margin-top: 24px; flex-direction: column; gap: 10px; }
-  .heroCtas a, .heroCtas button { width: 100%; justify-content: center; }
+  .heroLede { font-size: 16px; margin-top: 16px; }
+  .heroCtas { margin-top: 22px; flex-direction: column; gap: 10px; }
   .statRow { margin-top: 28px; max-width: 100%; }
   .statN { font-size: 36px; }
-  .statL { font-size: 9px; letter-spacing: 0.05em; }
+  .statL { font-size: 9px; }
   .heroFlags { flex-wrap: wrap; gap: 6px; }
 }
 

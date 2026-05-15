@@ -16,30 +16,30 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className={styles.hero}>
 
-        {/* Moodbild — zweeft vrij rechts, geen kolom, geen box */}
+        {/* Moodbild: cover → toont alleen de velg close-up, geen gap zichtbaar */}
         <div className={styles.heroImg} aria-hidden="true">
           <Image
             src="/moodbild-alpha.webp"
             alt=""
             fill
             priority
-            sizes="60vw"
-            style={{ objectFit: 'contain', objectPosition: 'right center' }}
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'right top' }}
           />
         </div>
 
-        {/* Gradient — tekst leesbaar, auto naadloos geïntegreerd */}
+        {/* Gradient links → donker voor tekst, rechts → auto volledig zichtbaar */}
         <div className={styles.heroOverlay} aria-hidden="true" />
 
-        {/* Lichtsporen */}
+        {/* Lichtsporen — atmosferisch effect */}
         <div className={styles.speedLines} aria-hidden="true" />
 
-        {/* Roterend wiel — zweeft tussen tekst en auto */}
+        {/* Roterend wiel — links in de achtergrond, NIET in het midden */}
         <div className={styles.tireWrap} aria-hidden="true">
-          <TireRim size={500} className={styles.tireRim} />
+          <TireRim size={560} className={styles.tireRim} />
         </div>
 
-        {/* Tekst — vrij gepositioneerd, z-index boven alles */}
+        {/* Content */}
         <div className={styles.heroContent}>
           <div className={styles.heroFlags}>
             <span className={styles.flagSpoed}>● 24/7 SPOED</span>
