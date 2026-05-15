@@ -29,29 +29,17 @@ export default function Home() {
         {/* Rode diagonale balk — design element */}
         <div className={styles.heroDiag} aria-hidden="true" />
 
-        {/* Twee auto-foto's rechts — staggered */}
-        <div className={styles.heroPhotos} aria-hidden="true">
-          <div className={styles.heroPhotoTop}>
-            <Image
-              src="/moodbild-alpha.webp"
-              alt=""
-              fill
-              priority
-              sizes="45vw"
-              style={{ objectFit: 'cover', objectPosition: 'center 5%' }}
-            />
-            <div className={styles.heroPhotoFade} />
-          </div>
-          <div className={styles.heroPhotoBottom}>
-            <Image
-              src="/moodbild-alpha.webp"
-              alt=""
-              fill
-              sizes="38vw"
-              style={{ objectFit: 'cover', objectPosition: 'center 88%' }}
-            />
-            <div className={styles.heroPhotoFade} />
-          </div>
+        {/* Één auto-foto rechts */}
+        <div className={styles.heroPhoto} aria-hidden="true">
+          <Image
+            src="/moodbild-alpha.webp"
+            alt=""
+            fill
+            priority
+            sizes="55vw"
+            style={{ objectFit: 'cover', objectPosition: 'center 5%' }}
+          />
+          <div className={styles.heroPhotoFade} />
         </div>
 
         {/* Content */}
