@@ -5,10 +5,6 @@
   to   { transform: rotate(360deg); }
 }
 
-@keyframes speedMove {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-120px); }
-}
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -65,20 +61,69 @@
     linear-gradient(0deg,   rgba(10,10,11,0.7) 0%, transparent 22%);
 }
 
-/* Speed lines — nu écht zichtbaar (0.07 opacity) */
+/* Horizontale lichtsporen — zoals een camera die meepannetmet een bewegende auto */
 .speedLines {
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background-image: repeating-linear-gradient(
-    83deg,
-    transparent        0px,
-    transparent        100px,
-    rgba(255,255,255,0.07) 100px,
-    rgba(255,255,255,0.07) 102px
+  overflow: hidden;
+}
+
+.speedLines::before,
+.speedLines::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  animation: streakFade 4s ease-in-out infinite;
+}
+
+.speedLines::before {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0) 15%,
+    rgba(255,255,255,0.18) 38%,
+    rgba(255,255,255,0.28) 52%,
+    rgba(255,255,255,0.1) 68%,
+    transparent 100%
   );
-  animation: speedMove 0.9s linear infinite;
+  top: 28%;
+  box-shadow:
+    0 -88px  0 1px rgba(255,255,255,0.06),
+    0 -36px  0 1px rgba(255,255,255,0.10),
+    0  52px  0 1px rgba(255,255,255,0.08),
+    0  130px 0 2px rgba(255,255,255,0.05),
+    0  210px 0 1px rgba(255,255,255,0.07),
+    0  295px 0 1px rgba(255,255,255,0.04);
+}
+
+.speedLines::after {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0) 25%,
+    rgba(228,0,43,0.15) 45%,
+    rgba(228,0,43,0.08) 62%,
+    transparent 100%
+  );
+  top: 55%;
+  animation-delay: 2s;
+  box-shadow:
+    0 -170px 0 1px rgba(255,255,255,0.05),
+    0  -60px 0 1px rgba(255,255,255,0.09),
+    0  110px 0 1px rgba(255,255,255,0.06),
+    0  240px 0 1px rgba(255,255,255,0.04);
+}
+
+@keyframes streakFade {
+  0%   { opacity: 0; transform: translateX(-3%); }
+  15%  { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(2%); }
 }
 
 /* Roterend wiel — rechts, op de auto, zichtbaar */
