@@ -216,3 +216,226 @@
 }
 
 .related a:hover .relArrow { color: var(--red); transform: translateX(4px); }
+
+/* ── Quick Hero Bar ── */
+
+.quickHero {
+  margin-bottom: 48px;
+  padding: 32px 40px;
+  background: var(--surface);
+  border-left: 3px solid var(--red);
+}
+
+.quickTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 0;
+}
+
+.quickTag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid var(--red);
+  color: var(--red);
+}
+
+.quickDuration {
+  margin: 16px 0 0;
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--red);
+  letter-spacing: 0.02em;
+}
+
+/* ── Service Photo ── */
+
+.servicePhoto {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin: 48px 0;
+  background: var(--surface-2);
+}
+
+/* ── Why Section ── */
+
+.whySection {
+  background: var(--surface-2);
+  padding: 56px 48px;
+  margin: 0 0 48px;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .whyGrid { grid-template-columns: 1fr; }
+  .whySection { padding: 40px 28px; }
+}
+
+.whyText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.whyText .serviceVisualSub {
+  margin: 0;
+}
+
+.whyText .h2 {
+  margin: 0;
+}
+
+/* Override margin on serviceVisual inside whyGrid */
+.whyGrid .serviceVisual {
+  margin: 0;
+}
+
+/* ── Process Section ── */
+
+.processSection {
+  margin: 0 0 48px;
+  padding: 0;
+}
+
+.processSection > .serviceVisualSub {
+  margin-bottom: 8px;
+}
+
+.processSection > .h2 {
+  margin-bottom: 40px;
+}
+
+.processStep {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+}
+
+.processStep:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.processN {
+  font-family: var(--font-display);
+  font-size: 80px;
+  line-height: 1;
+  color: var(--red);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  opacity: 0.3;
+  user-select: none;
+}
+
+.processTitle {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+/* ── Includes Section ── */
+
+.includesSection {
+  margin: 48px 0;
+}
+
+.includesSection > .serviceVisualSub {
+  margin-bottom: 8px;
+}
+
+.includesSection > .h2 {
+  margin-bottom: 32px;
+}
+
+.includesList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.includesItem {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  padding: 14px 0 14px 32px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.includesItem:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.includesItem::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  color: var(--red);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ── Quote CTA Section ── */
+
+.quoteCta {
+  background: var(--red);
+  padding: 64px 48px;
+  margin: 56px 0 0;
+}
+
+.quoteCtaInner {
+  max-width: 600px;
+}
+
+.quoteCtaH2 {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.005em;
+  color: #fff;
+  margin: 0 0 20px;
+}
+
+.quoteCtaText {
+  font-size: 18px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 36px;
+}
+
+.quoteCtaBtns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .quickHero { padding: 24px 20px; }
+  .quoteCta { padding: 48px 28px; }
+  .quoteCtaH2 { font-size: 38px; }
+  .processStep { grid-template-columns: 56px 1fr; gap: 16px; }
+  .processN { font-size: 56px; }
+  .whySection { padding: 40px 20px; }
+}
