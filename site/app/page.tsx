@@ -24,7 +24,7 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            style={{ objectFit: 'cover', objectPosition: 'center right' }}
+            style={{ objectFit: 'cover', objectPosition: '70% center' }}
           />
           {/* Gradient: pikzwart links (tekst leesbaar) → auto zichtbaar rechts */}
           <div className={styles.heroGradient} />
@@ -67,16 +67,16 @@ export default function Home() {
 
           <div className={styles.statRow}>
             <div className={styles.stat}>
+              <div className={styles.statN}>5.0</div>
+              <div className={styles.statL}>Google score · 158 reviews</div>
+            </div>
+            <div className={styles.stat}>
               <div className={styles.statN}>24/7</div>
               <div className={styles.statL}>bereikbaar voor spoed</div>
             </div>
             <div className={styles.stat}>
               <div className={styles.statN}>80</div>
               <div className={styles.statL}>km/u tijdelijke band</div>
-            </div>
-            <div className={styles.stat}>
-              <div className={styles.statN}>14</div>
-              <div className={styles.statL}>steden in de regio</div>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function Home() {
               GEEN GEDOE.
             </h2>
             <p className={styles.processIntro}>
-              Of u nu spoedig nieuwe banden nodig heeft of een afspraak plant voor uitlijnen — wij maken het simpel.
+              Of je nu snel nieuwe banden nodig hebt of een afspraak wilt plannen — wij regelen het.
             </p>
           </div>
           <ProcessSteps />
@@ -164,7 +164,7 @@ export default function Home() {
           </div>
           <div className={styles.bigStars} aria-hidden="true">
             <div className={styles.starLine}>★★★★★</div>
-            <div className={styles.starSub}>GOOGLE BEOORDELINGEN</div>
+            <div className={styles.starSub}>5.0 GOOGLE · 158 REVIEWS</div>
           </div>
         </div>
         <div className="container">

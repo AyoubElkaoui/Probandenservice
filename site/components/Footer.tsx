@@ -13,7 +13,7 @@ export function Footer() {
         <div className={styles.brand}>
           <Link href="/" aria-label={site.name}>
             <Image
-              src="/logo.png"
+              src="/white-logo.png"
               alt={site.name}
               width={160}
               height={72}

@@ -1,5 +1,5 @@
 // Centrale bedrijfsgegevens — info van probandenservice.nl
-// Adres: Bellweg 40, 4104 BJ Culemborg | Tel: 06 42 51 36 92 | Spoed: 06 40 96 18 48
+// Adres: Bellweg 40, 4104 BJ Culemborg | Tel: 06 42 51 36 92
 
 export const site = {
   name: 'Probandenservice',
@@ -10,13 +10,14 @@ export const site = {
   url: 'https://probandenservice.nl',
   email: 'info@probandenservice.nl',
 
+  // Enig telefoonnummer in gebruik
   phone: {
     display: '06 — 42 51 36 92',
     tel: '+31642513692',
   },
   emergencyPhone: {
-    display: '06 — 40 96 18 48',
-    tel: '+31640961848',
+    display: '06 — 42 51 36 92',
+    tel: '+31642513692',
   },
 
   address: {
@@ -64,8 +65,8 @@ export const site = {
 
   stats: {
     tiresInStock: 'groot assortiment',
-    rating: null as number | null,
-    reviews: null as number | null,
+    rating: 5.0 as number | null,
+    reviews: 158 as number | null,
     yearsExperience: null as number | null,
     montagesPerYear: null as string | null,
   },

@@ -17,7 +17,7 @@ export function Nav() {
     <nav className={styles.nav}>
       <Link href="/" className={styles.brand} aria-label={`${site.name} — naar home`}>
         <Image
-          src="/logo.png"
+          src="/white-logo.png"
           alt={site.name}
           width={160}
           height={72}

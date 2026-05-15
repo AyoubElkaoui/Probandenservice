@@ -51,33 +51,36 @@ export default function OverOnsPage() {
       {/* ── Photo grid ── */}
       <section className={styles.photoGrid}>
         <div className={styles.photoLeft}>
+          {/* Eigen werkplaats foto — vervang door jouw Google foto */}
           <div className={styles.photoSlot} style={{ aspectRatio: '4/5' }}>
             <Image
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85"
-              alt="De werkplaats van Probandenservice Culemborg — professionele bandenservice"
+              src="https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Professionele werkplaats van Probandenservice Culemborg met auto op lift"
               fill
               sizes="(max-width: 720px) 100vw, 40vw"
-              style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+              style={{ objectFit: 'cover' }}
             />
           </div>
         </div>
         <div className={styles.photoRight}>
+          {/* Monteur aan het werk — vervang door jouw Google foto */}
           <div className={styles.photoSlot} style={{ aspectRatio: '4/3' }}>
             <Image
-              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85"
-              alt="Monteur van Probandenservice helpt een klant"
+              src="https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Vakkundige monteur aan het werk bij Probandenservice"
               fill
               sizes="(max-width: 720px) 100vw, 30vw"
-              style={{ objectFit: 'cover', objectPosition: 'center right' }}
+              style={{ objectFit: 'cover' }}
             />
           </div>
+          {/* Banden en velgen — vervang door jouw Google foto */}
           <div className={styles.photoSlot} style={{ aspectRatio: '4/3' }}>
             <Image
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85"
-              alt="Ruim assortiment banden op voorraad bij Probandenservice"
+              src="https://images.pexels.com/photos/4489765/pexels-photo-4489765.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Banden montage en service bij Probandenservice Culemborg"
               fill
               sizes="(max-width: 720px) 100vw, 30vw"
-              style={{ objectFit: 'cover', objectPosition: 'left center' }}
+              style={{ objectFit: 'cover' }}
             />
           </div>
         </div>

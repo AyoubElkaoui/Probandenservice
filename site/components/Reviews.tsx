@@ -2,24 +2,25 @@ import styles from './Reviews.module.css';
 
 type Review = { name: string; role: string; text: string; stars: number };
 
-// Echte klantreviews — vervang of breid uit zodra meer reviews beschikbaar zijn
+// Echte Google reviews van Pro Banden Service Culemborg
+// Bron: Google Business profiel (5/5 · 158 reviews)
 const defaultReviews: Review[] = [
   {
-    name: 'Rashid A.',
-    role: 'Culemborg · Google recensie',
-    text: '"Super snel geholpen! Lekke band gehad en binnen no time stonden ze bij me. Tijdelijke band gemonteerd, de volgende dag mijn band terug. Echt top service, zeker aan te raden."',
+    name: 'ERWU-projects',
+    role: 'Google recensie · 5 maanden geleden',
+    text: '"Hele aardige en kundige eigenaar van dit kleine bedrijf. Hele scherpe prijs voor winterbanden. De wachttijd is alleen totdat de banden daar bezorgd worden. Daarna supersnel geholpen. Aanrader."',
     stars: 5,
   },
   {
-    name: 'Mariëlle V.',
-    role: 'Utrecht · Google recensie',
-    text: '"Banden gekocht en direct laten monteren. Eerlijk advies gekregen — niet het duurste merk aangeraden maar wat echt bij mijn auto past. Netjes werk, snel klaar. Blij mee."',
+    name: 'Romke Wolters',
+    role: 'Google recensie',
+    text: '"Heel goed en vakkundig geholpen door Pro Banden Service. Twee voorbanden moesten worden vervangen en gebalanceerd. Ik kon snel een afspraak maken. Top service."',
     stars: 5,
   },
   {
-    name: 'Thijs de B.',
-    role: 'Nieuwegein · Google recensie',
-    text: '"Airco deed het al tijden niet meer. Hier bijgevuld, meteen ook op lek gecontroleerd. Koelt nu weer prima. Vriendelijk geholpen en goede uitleg gegeven. Kom hier zeker terug."',
+    name: 'Erik de Rooij',
+    role: 'Google recensie',
+    text: '"Achterbanden laten vervangen. Betreft een klein bedrijfje dat ook buiten reguliere werktijden reageert en beschikbaar is. Aanrader voor iedereen die snel geholpen wil worden."',
     stars: 5,
   },
 ];
