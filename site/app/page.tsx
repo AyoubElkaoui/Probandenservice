@@ -7,7 +7,6 @@ import { Reviews } from '@/components/Reviews';
 import { Stripe } from '@/components/Stripe';
 import { Button } from '@/components/Button';
 import { TireRim } from '@/components/TireRim';
-import { AnimatedCounter } from '@/components/AnimatedCounter';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -16,27 +15,43 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className={styles.hero}>
 
-        {/* Moodbild: cover → toont alleen de velg close-up, geen gap zichtbaar */}
-        <div className={styles.heroImg} aria-hidden="true">
-          <Image
-            src="/moodbild-alpha.webp"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            style={{ objectFit: 'cover', objectPosition: 'right top' }}
-          />
-        </div>
+        {/* Achtergrond: donker met subtiele textuur */}
+        <div className={styles.heroBg} aria-hidden="true" />
 
-        {/* Gradient links → donker voor tekst, rechts → auto volledig zichtbaar */}
-        <div className={styles.heroOverlay} aria-hidden="true" />
-
-        {/* Lichtsporen — atmosferisch effect */}
+        {/* Effecten */}
         <div className={styles.speedLines} aria-hidden="true" />
 
-        {/* Roterend wiel — links in de achtergrond, NIET in het midden */}
+        {/* TireRim — heel subtiel rechtsonder, accent */}
         <div className={styles.tireWrap} aria-hidden="true">
-          <TireRim size={560} className={styles.tireRim} />
+          <TireRim size={480} className={styles.tireRim} />
+        </div>
+
+        {/* Rode diagonale balk — design element */}
+        <div className={styles.heroDiag} aria-hidden="true" />
+
+        {/* Twee auto-foto's rechts — staggered */}
+        <div className={styles.heroPhotos} aria-hidden="true">
+          <div className={styles.heroPhotoTop}>
+            <Image
+              src="/moodbild-alpha.webp"
+              alt=""
+              fill
+              priority
+              sizes="45vw"
+              style={{ objectFit: 'cover', objectPosition: 'center 5%' }}
+            />
+            <div className={styles.heroPhotoFade} />
+          </div>
+          <div className={styles.heroPhotoBottom}>
+            <Image
+              src="/moodbild-alpha.webp"
+              alt=""
+              fill
+              sizes="38vw"
+              style={{ objectFit: 'cover', objectPosition: 'center 88%' }}
+            />
+            <div className={styles.heroPhotoFade} />
+          </div>
         </div>
 
         {/* Content */}
@@ -89,7 +104,7 @@ export default function Home() {
           <div>
             <div className="eyebrow">ONZE DIENSTEN</div>
             <h2 className={styles.h2}>
-              ALLES VOOR UW BANDEN.<br />
+              ALLES VOOR JE BANDEN.<br />
               ONDER ÉÉN DAK.
             </h2>
           </div>
@@ -105,7 +120,7 @@ export default function Home() {
         <div className="container">
           <div className={styles.sectionHead}>
             <div>
-              <div className="eyebrow">ZOMERACTIES 2026 · T/M 31 AUGUSTUS</div>
+              <div className="eyebrow">ZOMERACTIES 2026</div>
               <h2 className={styles.h2}>
                 RIJKLAAR VOOR<br />
                 DE ZOMER.
@@ -115,10 +130,10 @@ export default function Home() {
           </div>
           <div className={styles.actiesGrid}>
             {[
-              { href: '/actie/zomerbanden',   label: 'ZOMER',     title: 'Zomerbanden',       sub: 'Advies op maat' },
-              { href: '/actie/vakantiecheck', label: 'VAKANTIE',  title: 'Vakantiecheck',      sub: 'Klaar voor de weg' },
-              { href: '/actie/airco-zomer',   label: 'AIRCO',     title: 'Airco service',      sub: 'R134a & R1234yf' },
-              { href: '/actie/road-trip',     label: 'ALLES-IN-1', title: 'Compleet bezoek',  sub: 'Één keer, alles gedaan' },
+              { href: '/actie/zomerbanden',   label: 'ZOMER',      title: 'Zomerbanden',      sub: 'Advies op maat' },
+              { href: '/actie/vakantiecheck', label: 'VAKANTIE',   title: 'Vakantiecheck',    sub: 'Klaar voor de weg' },
+              { href: '/actie/airco-zomer',   label: 'AIRCO',      title: 'Airco service',    sub: 'R134a & R1234yf' },
+              { href: '/actie/road-trip',     label: 'ALLES-IN-1', title: 'Compleet bezoek', sub: 'Één keer, alles gedaan' },
             ].map(a => (
               <a key={a.href} href={a.href} className={styles.actieCard}>
                 <span className={styles.actiePrijs}>{a.label}</span>

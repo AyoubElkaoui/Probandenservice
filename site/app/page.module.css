@@ -16,7 +16,7 @@
   50%       { text-shadow: 0 0 60px rgba(228,0,43,0.5), 0 0 120px rgba(228,0,43,0.25); }
 }
 
-/* ────────────── Hero ────────────── */
+/* ────────────── Hero — staggered cards design ────────────── */
 
 .hero {
   position: relative;
@@ -28,31 +28,75 @@
   align-items: center;
 }
 
-/* Moodbild: vult volledige hero, objectFit cover toont alleen de velg */
-.heroImg {
+/* Donkere achtergrond textuur */
+.heroBg {
   position: absolute;
   inset: 0;
   z-index: 0;
+  background:
+    radial-gradient(ellipse at 70% 50%, rgba(228,0,43,0.06) 0%, transparent 60%),
+    var(--bg);
 }
 
-/* Gradient: tekst leesbaar links, auto zichtbaar rechts */
-.heroOverlay {
+/* Rode diagonale balk — design accent */
+.heroDiag {
+  position: absolute;
+  right: 46%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, transparent 0%, var(--red) 20%, var(--red) 80%, transparent 100%);
+  transform: skewX(-4deg);
+  z-index: 3;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Container voor de twee staggered foto's */
+.heroPhotos {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 56%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Bovenste foto — velg close-up */
+.heroPhotoTop {
+  position: absolute;
+  top: 5%;
+  right: 4%;
+  width: 88%;
+  height: 52%;
+  overflow: hidden;
+}
+
+/* Onderste foto — AMG met rode achtergrond */
+.heroPhotoBottom {
+  position: absolute;
+  bottom: 5%;
+  right: 18%;
+  width: 72%;
+  height: 40%;
+  overflow: hidden;
+}
+
+/* Fade overlay per foto — vloeiend in het donker */
+.heroPhotoFade {
   position: absolute;
   inset: 0;
   z-index: 1;
-  pointer-events: none;
   background:
-    linear-gradient(
-      105deg,
-      rgba(10,10,11,1.0)  0%,
-      rgba(10,10,11,0.98) 28%,
-      rgba(10,10,11,0.80) 48%,
-      rgba(10,10,11,0.30) 68%,
-      rgba(10,10,11,0.05) 85%,
-      transparent         100%
-    ),
-    linear-gradient(180deg, rgba(10,10,11,0.45) 0%, transparent 18%),
-    linear-gradient(0deg,   rgba(10,10,11,0.55) 0%, transparent 22%);
+    linear-gradient(90deg, rgba(10,10,11,0.7) 0%, transparent 35%),
+    linear-gradient(180deg, rgba(10,10,11,0.3) 0%, transparent 30%),
+    linear-gradient(0deg, rgba(10,10,11,0.3) 0%, transparent 30%);
+}
+
+/* Gradient over hele hero — tekst leesbaar links */
+.heroOverlay {
+  display: none; /* niet meer nodig */
 }
 
 /* Horizontale lichtsporen */
@@ -101,32 +145,31 @@
   100% { opacity: 0; transform: translateX(1%); }
 }
 
-/* Roterend wiel — links in achtergrond, NOOIT in het midden */
+/* Roterend wiel — rechts achter de foto's, subtiel glow accent */
 .tireWrap {
   position: absolute;
-  left: -120px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
+  right: 2%;
+  bottom: -80px;
+  z-index: 1;
   pointer-events: none;
-  opacity: 0.18;
+  opacity: 0.15;
 }
 
 .tireRim {
-  animation: spinWheel 28s linear infinite;
+  animation: spinWheel 30s linear infinite;
   display: block;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 860px) {
   .tireWrap { display: none; }
 }
 
-/* Tekst content — z-index boven overlay en moodbild */
+/* Tekst content */
 .heroContent {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   padding: 100px var(--gutter) 80px;
-  max-width: 640px;
+  max-width: 560px;
   width: 100%;
 }
 
@@ -219,29 +262,34 @@
 
 /* ── Hero responsive ── */
 
+@media (max-width: 1200px) {
+  .heroPhotos { width: 60%; }
+  .heroPhotoTop { width: 92%; right: 2%; }
+  .heroPhotoBottom { width: 76%; right: 14%; }
+  .heroDiag { right: 40%; }
+}
+
 @media (max-width: 900px) {
-  .heroOverlay {
-    background:
-      linear-gradient(105deg,
-        rgba(10,10,11,1.0)  0%,
-        rgba(10,10,11,0.98) 35%,
-        rgba(10,10,11,0.88) 55%,
-        rgba(10,10,11,0.6)  75%,
-        rgba(10,10,11,0.3)  100%
-      ),
-      linear-gradient(180deg, rgba(10,10,11,0.5) 0%, transparent 20%),
-      linear-gradient(0deg,   rgba(10,10,11,0.6) 0%, transparent 25%);
-  }
+  /* Foto's worden achtergrond op tablet */
+  .heroPhotos { width: 100%; opacity: 0.5; }
+  .heroPhotoTop { width: 70%; right: 0; height: 55%; top: 0; }
+  .heroPhotoBottom { width: 55%; right: 5%; height: 40%; bottom: 0; }
+  .heroDiag { display: none; }
+  .heroContent { max-width: 100%; }
   .heroH1 { font-size: clamp(52px, 10vw, 88px); }
+  /* Donkere overlay over de transparante foto's */
+  .heroBg {
+    background:
+      linear-gradient(105deg, rgba(10,10,11,1) 0%, rgba(10,10,11,0.95) 45%, rgba(10,10,11,0.6) 75%, rgba(10,10,11,0.3) 100%),
+      var(--bg);
+  }
 }
 
 @media (max-width: 640px) {
   .hero { min-height: 100svh; align-items: flex-start; }
-  .heroOverlay {
-    background:
-      rgba(10,10,11,0.72),
-      linear-gradient(105deg, rgba(10,10,11,0.98) 0%, rgba(10,10,11,0.7) 60%, rgba(10,10,11,0.3) 100%),
-      linear-gradient(0deg, rgba(10,10,11,0.8) 0%, transparent 30%);
+  .heroPhotos { opacity: 0.35; }
+  .heroBg {
+    background: linear-gradient(105deg, rgba(10,10,11,1) 0%, rgba(10,10,11,0.97) 55%, rgba(10,10,11,0.8) 100%), var(--bg);
   }
   .heroContent { padding: 52px 20px 44px; }
   .heroH1 { font-size: clamp(46px, 13vw, 72px); }
