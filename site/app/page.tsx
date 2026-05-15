@@ -76,7 +76,7 @@ export default function Home() {
             fill
             priority
             sizes="50vw"
-            style={{ objectFit: 'cover', objectPosition: 'center 12%' }}
+            style={{ objectFit: 'contain', objectPosition: 'center center' }}
           />
         </div>
 
