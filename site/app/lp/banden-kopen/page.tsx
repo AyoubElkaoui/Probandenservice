@@ -234,7 +234,7 @@ export default function BandenKopenPage() {
 
           <div className={s.detailImgWrap}>
             <Image
-              src="https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7?auto=format&fit=crop&w=1200&q=85"
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85"
               alt="Professionele bandenmontage bij Probandenservice"
               fill
               sizes="(max-width: 1100px) 100vw, 50vw"

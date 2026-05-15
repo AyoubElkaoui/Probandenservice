@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description:
       'Geen twee keer langs. Wij plannen alles achter elkaar in. U rijdt naar binnen met drie vragen en vertrekt met drie antwoorden.',
     images: [
-      'https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85',
     ],
   },
 };

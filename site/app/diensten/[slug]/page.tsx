@@ -1,22 +1,12 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import { services, getService } from '@/lib/services';
 import { site } from '@/lib/site';
 import { PageHeader } from '@/components/PageHeader';
 import { EmergencyBand } from '@/components/EmergencyBand';
 import { Button } from '@/components/Button';
 import styles from './detail.module.css';
-
-const serviceImages: Record<string, string> = {
-  'banden-verkoop':   'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85',
-  '3d-uitlijnen':     'https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7?auto=format&fit=crop&w=1200&q=85',
-  'airco-vullen':     'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85',
-  'banden-vervangen': 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=85',
-  'spoedservice':     'https://images.unsplash.com/photo-1558618047-3e0b3d66bbfc?auto=format&fit=crop&w=1200&q=85',
-  'bandenopslag':     'https://images.unsplash.com/photo-1597404294360-feeeda04612e?auto=format&fit=crop&w=1200&q=85',
-};
 
 type Params = { slug: string };
 
@@ -38,7 +28,6 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
 export default function ServiceDetail({ params }: { params: Params }) {
   const service = getService(params.slug);
   if (!service) notFound();
-  const imgSrc = serviceImages[service.slug];
 
   const related = services.filter(s => s.slug !== service.slug).slice(0, 3);
 
@@ -67,16 +56,13 @@ export default function ServiceDetail({ params }: { params: Params }) {
               </section>
             ))}
 
-            <div className={styles.serviceImg}>
-              {imgSrc && (
-                <Image
-                  src={imgSrc}
-                  alt={`${service.title} — professionele service bij Probandenservice Culemborg`}
-                  fill
-                  sizes="(max-width: 980px) 100vw, 60vw"
-                  style={{ objectFit: 'cover' }}
-                />
-              )}
+            {/* Ontworpen sectie ipv willekeurige stockfoto */}
+            <div className={styles.serviceVisual}>
+              <span className={styles.serviceVisualNum} aria-hidden="true">{service.number}</span>
+              <div className={styles.serviceVisualCopy}>
+                <div className={styles.serviceVisualTitle}>{service.title}</div>
+                <div className={styles.serviceVisualSub}>{site.address.city} · {site.phone.display}</div>
+              </div>
             </div>
 
             <div className={styles.cta}>

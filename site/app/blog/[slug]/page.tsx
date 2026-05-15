@@ -8,11 +8,16 @@ import { PageHeader } from '@/components/PageHeader';
 import { EmergencyBand } from '@/components/EmergencyBand';
 import styles from './post.module.css';
 
+// Gebruik eigen foto's zodra beschikbaar — zet dan het pad hier in
+// Nu: de enige bevestigde automotive Unsplash foto (mechanic)
+const AUTOMOTIVE_IMG = 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85';
+const CAR_IMG        = 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85';
+
 const postImages: Record<string, string> = {
-  'wanneer-is-uw-band-versleten':  'https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7?auto=format&fit=crop&w=1200&q=85',
-  '2d-versus-3d-uitlijnen':        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85',
-  'allseasons-of-zomer-winter-set':'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=85',
-  'vakantiecheck-zomer-2026':      'https://images.unsplash.com/photo-1469285994282-454ceb49e63c?auto=format&fit=crop&w=1200&q=85',
+  'wanneer-is-uw-band-versleten':   AUTOMOTIVE_IMG,
+  '2d-versus-3d-uitlijnen':         AUTOMOTIVE_IMG,
+  'allseasons-of-zomer-winter-set': CAR_IMG,
+  'vakantiecheck-zomer-2026':       CAR_IMG,
 };
 
 type Params = { slug: string };

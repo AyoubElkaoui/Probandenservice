@@ -53,31 +53,31 @@ export default function OverOnsPage() {
         <div className={styles.photoLeft}>
           <div className={styles.photoSlot} style={{ aspectRatio: '4/5' }}>
             <Image
-              src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=900&q=85"
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85"
               alt="De werkplaats van Probandenservice Culemborg — professionele bandenservice"
               fill
               sizes="(max-width: 720px) 100vw, 40vw"
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
             />
           </div>
         </div>
         <div className={styles.photoRight}>
           <div className={styles.photoSlot} style={{ aspectRatio: '4/3' }}>
             <Image
-              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=85"
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85"
               alt="Monteur van Probandenservice helpt een klant"
               fill
               sizes="(max-width: 720px) 100vw, 30vw"
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'cover', objectPosition: 'center right' }}
             />
           </div>
           <div className={styles.photoSlot} style={{ aspectRatio: '4/3' }}>
             <Image
-              src="https://images.unsplash.com/photo-1597404294360-feeeda04612e?auto=format&fit=crop&w=900&q=85"
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85"
               alt="Ruim assortiment banden op voorraad bij Probandenservice"
               fill
               sizes="(max-width: 720px) 100vw, 30vw"
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'cover', objectPosition: 'left center' }}
             />
           </div>
         </div>

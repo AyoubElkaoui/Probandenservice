@@ -98,7 +98,7 @@ export default function UitlijnenPage() {
       <section className={s.hero} style={{ minHeight: '680px' }}>
         <div className={s.heroImgWrap}>
           <Image
-            src="https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7?auto=format&fit=crop&w=1600&q=85"
+            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=formatphoto-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600fit=cropphoto-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600w=1600&q=85"
             alt="3D wieluitlijning met Hunter Hawkeye Elite bij Probandenservice Culemborg"
             fill
             priority

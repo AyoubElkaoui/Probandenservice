@@ -12,11 +12,14 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog' },
 };
 
+const A = 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80';
+const C = 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80';
+
 const postImages: Record<string, string> = {
-  'wanneer-is-uw-band-versleten':  'https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7?auto=format&fit=crop&w=1200&q=80',
-  '2d-versus-3d-uitlijnen':        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80',
-  'allseasons-of-zomer-winter-set':'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80',
-  'vakantiecheck-zomer-2026':      'https://images.unsplash.com/photo-1469285994282-454ceb49e63c?auto=format&fit=crop&w=1200&q=80',
+  'wanneer-is-uw-band-versleten':   A,
+  '2d-versus-3d-uitlijnen':         A,
+  'allseasons-of-zomer-winter-set': C,
+  'vakantiecheck-zomer-2026':       C,
 };
 
 function formatDate(iso: string) {
