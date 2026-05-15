@@ -269,32 +269,51 @@
   .heroDiag { right: 40%; }
 }
 
-@media (max-width: 900px) {
-  /* Foto's worden achtergrond op tablet */
-  .heroPhotos { width: 100%; opacity: 0.5; }
-  .heroPhotoTop { width: 70%; right: 0; height: 55%; top: 0; }
-  .heroPhotoBottom { width: 55%; right: 5%; height: 40%; bottom: 0; }
+@media (max-width: 860px) {
+  /* Tablet: foto's kleiner en minder prominent */
+  .heroPhotos { width: 55%; opacity: 0.6; }
+  .heroPhotoTop  { width: 100%; right: 0; height: 55%; }
+  .heroPhotoBottom { width: 80%; right: 5%; height: 38%; }
   .heroDiag { display: none; }
   .heroContent { max-width: 100%; }
   .heroH1 { font-size: clamp(52px, 10vw, 88px); }
-  /* Donkere overlay over de transparante foto's */
   .heroBg {
     background:
-      linear-gradient(105deg, rgba(10,10,11,1) 0%, rgba(10,10,11,0.95) 45%, rgba(10,10,11,0.6) 75%, rgba(10,10,11,0.3) 100%),
-      var(--bg);
+      linear-gradient(105deg,
+        rgba(10,10,11,1.0) 0%,
+        rgba(10,10,11,0.97) 40%,
+        rgba(10,10,11,0.75) 65%,
+        rgba(10,10,11,0.35) 100%
+      ), var(--bg);
   }
 }
 
 @media (max-width: 640px) {
-  .hero { min-height: 100svh; align-items: flex-start; }
-  .heroPhotos { opacity: 0.35; }
+  .hero { min-height: 100svh; }
+
+  /* Op mobile: onderste foto verbergen, bovenste foto als achtergrond */
+  .heroPhotoTop  { top: 0; right: 0; width: 100%; height: 100%; opacity: 0.25; }
+  .heroPhotoBottom { display: none; }
+  .heroDiag { display: none; }
+
+  /* Sterke overlay zodat tekst leesbaar is */
   .heroBg {
-    background: linear-gradient(105deg, rgba(10,10,11,1) 0%, rgba(10,10,11,0.97) 55%, rgba(10,10,11,0.8) 100%), var(--bg);
+    background:
+      linear-gradient(
+        160deg,
+        rgba(10,10,11,0.98) 0%,
+        rgba(10,10,11,0.95) 40%,
+        rgba(10,10,11,0.80) 70%,
+        rgba(10,10,11,0.65) 100%
+      ),
+      var(--bg);
   }
-  .heroContent { padding: 52px 20px 44px; }
+
+  .heroContent { padding: 52px 20px 48px; }
   .heroH1 { font-size: clamp(46px, 13vw, 72px); }
   .heroLede { font-size: 16px; margin-top: 16px; }
   .heroCtas { margin-top: 22px; flex-direction: column; gap: 10px; }
+  .heroCtas a, .heroCtas button { width: 100%; justify-content: center; }
   .statRow { margin-top: 28px; max-width: 100%; }
   .statN { font-size: 36px; }
   .statL { font-size: 9px; }
