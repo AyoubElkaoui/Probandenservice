@@ -272,6 +272,17 @@ export default function VakantieCheckPage() {
         </div>
       </div>
 
+      {/* ── LP LINK ───────────────────────────────────────── */}
+      <section className={s.lpLink}>
+        <div className={s.container}>
+          <p className={s.lpLinkText}>Wil je meer weten over onze diensten?</p>
+          <div className={s.lpLinkBtns}>
+            <Button href="/diensten">Bekijk alle diensten →</Button>
+            <Button href="/contact" variant="ghost">Direct een afspraak</Button>
+          </div>
+        </div>
+      </section>
+
       {/* ── EMERGENCY ─────────────────────────────────────── */}
       <EmergencyBand />
     </>

@@ -217,6 +217,17 @@ export default function ZomerbandenPage() {
         </div>
       </section>
 
+      {/* ── LP LINK ───────────────────────────────────────── */}
+      <section className={s.lpLink}>
+        <div className={s.container}>
+          <p className={s.lpLinkText}>Wil je meer weten over deze dienst?</p>
+          <div className={s.lpLinkBtns}>
+            <Button href="/lp/banden-kopen">Meer informatie →</Button>
+            <Button href="/contact" variant="ghost">Direct een afspraak</Button>
+          </div>
+        </div>
+      </section>
+
       {/* ── EMERGENCY ─────────────────────────────────────── */}
       <EmergencyBand />
     </>

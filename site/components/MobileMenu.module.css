@@ -1,0 +1,102 @@
+.toggle {
+  display: none; /* hidden on desktop; shown at mobile breakpoint below */
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 8px;
+}
+
+@media (max-width: 860px) {
+  .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.close {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 0;
+  overflow-y: auto;
+}
+
+.link {
+  font-family: var(--font-display);
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  display: block;
+  transition: color 0.15s;
+}
+
+.link:hover { color: var(--red); }
+
+.footer {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.callBtn {
+  display: block;
+  text-align: center;
+  background: var(--red);
+  color: #fff;
+  padding: 18px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+}
+
+.appointBtn {
+  display: block;
+  text-align: center;
+  border: 1.5px solid var(--line-2);
+  color: var(--text);
+  padding: 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

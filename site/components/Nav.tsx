@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { site } from '@/lib/site';
+import { MobileMenu } from './MobileMenu';
 import styles from './Nav.module.css';
 
 const links = [
@@ -34,6 +35,8 @@ export function Nav() {
           </li>
         ))}
       </ul>
+
+      <MobileMenu />
 
       <div className={styles.cta}>
         <Link href="/contact" className={styles.ghost}>Afspraak</Link>

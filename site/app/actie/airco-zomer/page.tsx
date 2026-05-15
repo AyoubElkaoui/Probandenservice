@@ -260,6 +260,17 @@ export default function AircoZomerPage() {
         </div>
       </div>
 
+      {/* ── LP LINK ───────────────────────────────────────── */}
+      <section className={s.lpLink}>
+        <div className={s.container}>
+          <p className={s.lpLinkText}>Wil je meer weten over deze dienst?</p>
+          <div className={s.lpLinkBtns}>
+            <Button href="/lp/airco">Meer informatie →</Button>
+            <Button href="/contact" variant="ghost">Direct een afspraak</Button>
+          </div>
+        </div>
+      </section>
+
       {/* ── EMERGENCY ─────────────────────────────────────── */}
       <EmergencyBand />
     </>

@@ -909,3 +909,36 @@
     gap: 12px;
   }
 }
+
+/* ── Mobile specifiek voor LP hero ── */
+@media (max-width: 640px) {
+  .hero { min-height: 85vh; }
+  .heroContent { padding: 48px 20px 56px; }
+  .heroH1 { font-size: clamp(44px, 13vw, 72px); }
+  .heroTagline { font-size: 15px; }
+  .priceTag { font-size: 11px; padding: 6px 16px 6px 12px; }
+  .statRow { margin-top: 28px; }
+  .statN { font-size: 40px; }
+  .statL { font-size: 9px; }
+
+  /* Details 2-col → 1-col */
+  .detailsGrid { grid-template-columns: 1fr !important; }
+  .detailImgWrap { height: 220px; position: relative; }
+
+  /* Pricing */
+  .pricingInner { grid-template-columns: 1fr !important; }
+
+  /* Process */
+  .processGrid { grid-template-columns: 1fr !important; }
+
+  /* Reviews */
+  .reviewsHead { flex-direction: column; gap: 16px; }
+
+  /* FAQ */
+  .faqGrid { grid-template-columns: 1fr !important; }
+
+  /* Final CTA */
+  .finalCtaInner { grid-template-columns: 1fr !important; }
+  .finalCtaAddress { display: none; }
+  .quoteCta { padding: 40px 20px; }
+}

@@ -125,3 +125,30 @@ p { margin: 0; }
   outline: 2px solid var(--red);
   outline-offset: 3px;
 }
+
+/* ──────────────────────────────────────────────
+   Global responsive fixes — mobile & tablet
+   ────────────────────────────────────────────── */
+
+/* Container padding op kleine schermen */
+@media (max-width: 640px) {
+  .container {
+    padding-inline: 20px;
+  }
+}
+
+/* Eyebrow label kleiner op mobile */
+@media (max-width: 640px) {
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+  }
+}
+
+/* H1-H4 schaalcorrectie op mobile — voorkomen dat titels te groot worden */
+@media (max-width: 640px) {
+  h1 { font-size: clamp(44px, 14vw, 72px); }
+  h2 { font-size: clamp(32px, 10vw, 64px); }
+  h3 { font-size: clamp(22px, 7vw, 36px); }
+  h4 { font-size: clamp(18px, 5vw, 24px); }
+}

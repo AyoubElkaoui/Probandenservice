@@ -112,3 +112,8 @@
 @media (max-width: 600px) {
   .ghost { display: none; }
 }
+
+@media (max-width: 860px) {
+  .links { display: none; } /* MobileMenu handles navigation */
+  .ghost { display: none; } /* MobileMenu has afspraak button */
+}

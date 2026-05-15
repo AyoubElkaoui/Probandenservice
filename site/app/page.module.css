@@ -16,53 +16,51 @@
   50%       { text-shadow: 0 0 60px rgba(228,0,43,0.5), 0 0 120px rgba(228,0,43,0.25); }
 }
 
-/* ────────────── Hero — full bleed auto + effecten ────────────── */
+/* ────────────── Hero — split layout product shot ────────────── */
 
 .hero {
-  position: relative;
-  min-height: 88vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 90vh;
   background: var(--bg);
   color: var(--text);
   overflow: hidden;
+  position: relative;
+}
+
+/* LINKS: donkere sectie met alle tekst */
+.heroLeft {
+  position: relative;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  background: var(--bg);
 }
 
-/* Auto-foto achtergrond */
-.heroBg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+/* RECHTS: auto als floating product shot */
+.heroRight {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
 }
 
-/* Gradient: donker links → auto duidelijk zichtbaar rechts als product shot */
-.heroGradient {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    105deg,
-    rgba(10, 10, 11, 1.0)  0%,
-    rgba(10, 10, 11, 0.96) 25%,
-    rgba(10, 10, 11, 0.70) 45%,
-    rgba(10, 10, 11, 0.25) 65%,
-    rgba(10, 10, 11, 0.05) 85%,
-    rgba(10, 10, 11, 0.0)  100%
-  );
-}
-
-/* Vignette boven en onder */
-.heroVignette {
+/* Fade overlay op de auto — emergeert uit het donker aan alle kanten */
+.heroCarFade {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(10,10,11,0.6) 0%, transparent 18%),
-    linear-gradient(0deg,   rgba(10,10,11,0.7) 0%, transparent 22%);
+    /* Links fade: blend met tekst-sectie */
+    linear-gradient(90deg,  rgba(10,10,11,0.95) 0%, rgba(10,10,11,0.4) 30%, transparent 60%),
+    /* Boven fade */
+    linear-gradient(180deg, rgba(10,10,11,0.7) 0%, transparent 30%),
+    /* Onder fade */
+    linear-gradient(0deg,   rgba(10,10,11,0.8) 0%, transparent 40%),
+    /* Rechts fade */
+    linear-gradient(270deg, rgba(10,10,11,0.4) 0%, transparent 40%);
 }
 
-/* Horizontale lichtsporen — zoals een camera die meepannetmet een bewegende auto */
+/* Horizontale lichtsporen */
 .speedLines {
   position: absolute;
   inset: 0;
@@ -82,60 +80,41 @@
 
 .speedLines::before {
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255,255,255,0) 15%,
-    rgba(255,255,255,0.18) 38%,
-    rgba(255,255,255,0.28) 52%,
-    rgba(255,255,255,0.1) 68%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 40%, rgba(255,255,255,0.28) 52%, transparent 100%);
   top: 28%;
   box-shadow:
-    0 -88px  0 1px rgba(255,255,255,0.06),
-    0 -36px  0 1px rgba(255,255,255,0.10),
-    0  52px  0 1px rgba(255,255,255,0.08),
-    0  130px 0 2px rgba(255,255,255,0.05),
-    0  210px 0 1px rgba(255,255,255,0.07),
-    0  295px 0 1px rgba(255,255,255,0.04);
+    0 -80px  0 1px rgba(255,255,255,0.06),
+    0 -30px  0 1px rgba(255,255,255,0.10),
+    0  60px  0 1px rgba(255,255,255,0.07),
+    0  140px 0 1px rgba(255,255,255,0.05);
 }
 
 .speedLines::after {
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255,255,255,0) 25%,
-    rgba(228,0,43,0.15) 45%,
-    rgba(228,0,43,0.08) 62%,
-    transparent 100%
-  );
-  top: 55%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(228,0,43,0.12) 45%, rgba(228,0,43,0.06) 65%, transparent 100%);
+  top: 58%;
   animation-delay: 2s;
   box-shadow:
-    0 -170px 0 1px rgba(255,255,255,0.05),
-    0  -60px 0 1px rgba(255,255,255,0.09),
-    0  110px 0 1px rgba(255,255,255,0.06),
-    0  240px 0 1px rgba(255,255,255,0.04);
+    0 -140px 0 1px rgba(255,255,255,0.04),
+    0   80px 0 1px rgba(255,255,255,0.06);
 }
 
 @keyframes streakFade {
-  0%   { opacity: 0; transform: translateX(-3%); }
+  0%   { opacity: 0; transform: translateX(-2%); }
   15%  { opacity: 1; }
-  70%  { opacity: 1; }
-  100% { opacity: 0; transform: translateX(2%); }
+  75%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(1%); }
 }
 
-/* Roterend wiel — rechts, op de auto, zichtbaar */
+/* Roterend wiel — rechts in de heroLeft sectie */
 .tireWrap {
   position: absolute;
-  right: -30px;           /* Grotendeels zichtbaar */
+  right: -140px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 3;
+  z-index: 1;
   pointer-events: none;
-  opacity: 0.85;          /* Duidelijk zichtbaar */
+  opacity: 0.6;
 }
 
 .tireRim {
@@ -143,24 +122,13 @@
   display: block;
 }
 
-@media (max-width: 1400px) {
-  .tireWrap { right: -80px; opacity: 0.7; }
-}
-
-@media (max-width: 1100px) {
-  .tireWrap { right: -160px; opacity: 0.5; }
-}
-
-@media (max-width: 800px) {
-  .tireWrap { display: none; }
-}
-
-/* Tekst content — over alles heen, links uitgelijnd */
+/* Tekst content */
 .heroContent {
   position: relative;
   z-index: 4;
-  padding: 120px var(--gutter) 100px;
-  max-width: 720px;
+  padding: 100px var(--gutter) 80px;
+  max-width: 680px;
+  width: 100%;
 }
 
 .heroFlags {
@@ -250,8 +218,40 @@
   text-transform: uppercase;
 }
 
+/* ── Hero responsive ── */
+
+/* Tablet: auto kleiner, wiel verberg */
+@media (max-width: 1100px) {
+  .hero { min-height: 80vh; }
+  .tireWrap { right: -180px; opacity: 0.4; }
+}
+
+/* Tablet portrait: stack */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .heroLeft { min-height: 60vh; }
+  .heroRight { height: 50vw; max-height: 400px; min-height: 250px; }
+  .heroCarFade {
+    background:
+      linear-gradient(0deg, rgba(10,10,11,0.9) 0%, transparent 50%),
+      linear-gradient(180deg, rgba(10,10,11,0.5) 0%, transparent 30%);
+  }
+  .tireWrap { display: none; }
+  .heroContent { padding: 60px var(--gutter) 40px; max-width: 100%; }
+  .heroH1 { font-size: clamp(52px, 12vw, 96px); }
+}
+
+/* Mobile */
 @media (max-width: 600px) {
-  .heroContent { padding-top: 80px; padding-bottom: 80px; }
+  .heroLeft { min-height: 55vh; }
+  .heroRight { height: 56vw; max-height: 280px; }
+  .heroContent { padding: 48px 20px 32px; }
+  .heroH1 { font-size: clamp(44px, 14vw, 72px); }
+  .heroLede { font-size: 16px; margin-top: 20px; }
+  .heroCtas { margin-top: 24px; flex-direction: column; }
+  .statRow { margin-top: 32px; max-width: 100%; }
+  .statN { font-size: 36px; }
+  .statL { font-size: 9px; }
 }
 
 .specCard {
