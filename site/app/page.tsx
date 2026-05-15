@@ -31,8 +31,13 @@ export default function Home() {
         {/* Gradient — tekst leesbaar, auto naadloos geïntegreerd */}
         <div className={styles.heroOverlay} aria-hidden="true" />
 
-        {/* Sfeer: lichtsporen */}
+        {/* Lichtsporen */}
         <div className={styles.speedLines} aria-hidden="true" />
+
+        {/* Roterend wiel — zweeft tussen tekst en auto */}
+        <div className={styles.tireWrap} aria-hidden="true">
+          <TireRim size={500} className={styles.tireRim} />
+        </div>
 
         {/* Tekst — vrij gepositioneerd, z-index boven alles */}
         <div className={styles.heroContent}>

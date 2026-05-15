@@ -107,6 +107,34 @@
   100% { opacity: 0; transform: translateX(1%); }
 }
 
+/* Roterend wiel — zweeft tussen tekst en moodbild */
+.tireWrap {
+  position: absolute;
+  left: 38%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.tireRim {
+  animation: spinWheel 22s linear infinite;
+  display: block;
+}
+
+@media (max-width: 1100px) {
+  .tireWrap { left: 44%; opacity: 0.35; }
+}
+
+@media (max-width: 860px) {
+  .tireWrap { left: 50%; transform: translate(-50%, -50%); opacity: 0.25; }
+}
+
+@media (max-width: 640px) {
+  .tireWrap { display: none; }
+}
+
 /* Tekst content — z-index boven overlay en moodbild */
 .heroContent {
   position: relative;
