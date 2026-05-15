@@ -66,33 +66,18 @@ export default function Home() {
           </div>
         </div>
 
-        {/* RECHTS: Mercedes-AMG moodbild — twee helften naadloos */}
+        {/* RECHTS: Mercedes-AMG moodbild — velg close-up als product shot */}
         <div className={styles.heroRight} aria-hidden="true">
-          {/* Linker blend naar de tekst-sectie */}
+          {/* Fade overlay: naadloos blend links + top/bottom vignette */}
           <div className={styles.heroAura} />
-
-          {/* Bovenste helft: velg close-up */}
-          <div className={styles.moodTop}>
-            <Image
-              src="/moodbild-alpha.webp"
-              alt=""
-              fill
-              priority
-              sizes="50vw"
-              style={{ objectFit: 'cover', objectPosition: 'center 8%' }}
-            />
-          </div>
-
-          {/* Onderste helft: AMG full shot */}
-          <div className={styles.moodBottom}>
-            <Image
-              src="/moodbild-alpha.webp"
-              alt=""
-              fill
-              sizes="50vw"
-              style={{ objectFit: 'cover', objectPosition: 'center 92%' }}
-            />
-          </div>
+          <Image
+            src="/moodbild-alpha.webp"
+            alt=""
+            fill
+            priority
+            sizes="50vw"
+            style={{ objectFit: 'cover', objectPosition: 'center 12%' }}
+          />
         </div>
 
         <Stripe />

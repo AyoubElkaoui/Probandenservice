@@ -37,38 +37,23 @@
   background: var(--bg);
 }
 
-/* RECHTS: twee naadloze helften van de moodbild */
+/* RECHTS: Mercedes-AMG velg close-up */
 .heroRight {
   position: relative;
   overflow: hidden;
   background: var(--bg);
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 0;
 }
 
-/* Blend overlay — naadloos links + subtiele top/bottom fade */
+/* Naadloze blend: links naar tekst-sectie + subtiele top/bottom vignette */
 .heroAura {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(10,10,11,0.92) 0%, rgba(10,10,11,0.35) 22%, transparent 48%),
-    linear-gradient(180deg, rgba(10,10,11,0.55) 0%, transparent 25%),
-    linear-gradient(0deg,   rgba(10,10,11,0.55) 0%, transparent 25%);
-}
-
-/* Bovenste helft */
-.moodTop {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Onderste helft */
-.moodBottom {
-  position: relative;
-  overflow: hidden;
+    linear-gradient(90deg,  rgba(10,10,11,0.95) 0%, rgba(10,10,11,0.5) 20%, rgba(10,10,11,0.1) 45%, transparent 65%),
+    linear-gradient(180deg, rgba(10,10,11,0.6)  0%, transparent 30%),
+    linear-gradient(0deg,   rgba(10,10,11,0.5)  0%, transparent 30%);
 }
 
 /* Horizontale lichtsporen */
@@ -231,38 +216,56 @@
 
 /* ── Hero responsive ── */
 
-/* Tablet: auto kleiner, wiel verberg */
 @media (max-width: 1100px) {
-  .hero { min-height: 80vh; }
-  .tireWrap { right: -180px; opacity: 0.4; }
+  .tireWrap { right: -200px; opacity: 0.25; }
 }
 
-/* Tablet portrait: stack */
+/* Tablet portrait (<900px): auto wordt achtergrond achter de tekst */
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .heroLeft { min-height: 60vh; }
-  .heroRight { height: 50vw; max-height: 400px; min-height: 250px; }
-  .heroCarFade {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    min-height: 85vh;
+    position: relative;
+  }
+  /* Auto section: absolute achtergrond over hele hero */
+  .heroRight {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  /* Sterkere fade zodat tekst leesbaar blijft over de auto */
+  .heroAura {
     background:
-      linear-gradient(0deg, rgba(10,10,11,0.9) 0%, transparent 50%),
-      linear-gradient(180deg, rgba(10,10,11,0.5) 0%, transparent 30%);
+      rgba(10,10,11,0.75),
+      linear-gradient(90deg, rgba(10,10,11,0.97) 0%, rgba(10,10,11,0.85) 40%, rgba(10,10,11,0.55) 70%, rgba(10,10,11,0.3) 100%);
+  }
+  /* Tekst: volle breedte, over de auto */
+  .heroLeft {
+    position: relative;
+    z-index: 1;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
   }
   .tireWrap { display: none; }
-  .heroContent { padding: 60px var(--gutter) 40px; max-width: 100%; }
-  .heroH1 { font-size: clamp(52px, 12vw, 96px); }
+  .heroContent { padding: 80px 32px 60px; max-width: 100%; }
+  .heroH1 { font-size: clamp(52px, 11vw, 88px); }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .heroLeft { min-height: 55vh; }
-  .heroRight { height: 56vw; max-height: 280px; }
-  .heroContent { padding: 48px 20px 32px; }
-  .heroH1 { font-size: clamp(44px, 14vw, 72px); }
-  .heroLede { font-size: 16px; margin-top: 20px; }
-  .heroCtas { margin-top: 24px; flex-direction: column; }
-  .statRow { margin-top: 32px; max-width: 100%; }
-  .statN { font-size: 36px; }
-  .statL { font-size: 9px; }
+/* Mobile (<640px) */
+@media (max-width: 640px) {
+  .hero { min-height: 100svh; }
+  .heroLeft { min-height: 100svh; align-items: flex-start; padding-top: 20px; }
+  .heroContent { padding: 48px 20px 40px; }
+  .heroH1 { font-size: clamp(46px, 14vw, 72px); }
+  .heroLede { font-size: 16px; margin-top: 18px; max-width: 100%; }
+  .heroCtas { margin-top: 24px; flex-direction: column; gap: 10px; }
+  .heroCtas a { width: 100%; justify-content: center; }
+  .statRow { margin-top: 28px; max-width: 100%; grid-template-columns: repeat(3, 1fr); }
+  .statN { font-size: 32px; }
+  .statL { font-size: 9px; letter-spacing: 0.05em; }
+  .heroFlags { flex-direction: column; gap: 6px; align-items: flex-start; }
 }
 
 .specCard {
