@@ -6,11 +6,32 @@
   overflow: hidden;
 }
 
+/* Decoratief wiel achtergrond */
+.rimBg {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  pointer-events: none;
+  animation: spinWheelSlow 40s linear infinite;
+}
+
+@keyframes spinWheelSlow {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to   { transform: translateY(-50%) rotate(360deg); }
+}
+
+@media (max-width: 900px) {
+  .rimBg { display: none; }
+}
+
 .inner {
   padding: 88px var(--gutter) 88px;
   max-width: 1100px;
   margin: 0;
   position: relative;
+  z-index: 1;
 }
 
 .crumbs {

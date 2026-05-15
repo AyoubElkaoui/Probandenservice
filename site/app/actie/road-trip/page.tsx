@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Target, Wind, Car } from 'lucide-react';
 import { site } from '@/lib/site';
 import { Button } from '@/components/Button';
@@ -66,9 +67,19 @@ const reviews = [
 export default function RoadTripPage() {
   return (
     <>
-      {/* ── HERO — minimal/typographic ────────────────────── */}
-      <section className={s.heroDark}>
-        <div className={s.heroDarkContent}>
+      {/* ── HERO ─────────────────────────────────────────── */}
+      <section className={s.heroDark} style={{ position: 'relative' }}>
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+          <Image
+            src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1600&q=85"
+            alt="Sportieve auto op de weg — alles in één bezoek bij Probandenservice"
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center', opacity: 0.25 }}
+          />
+        </div>
+        <div className={s.heroDarkContent} style={{ position: 'relative', zIndex: 1 }}>
           <div className={s.serviceTag}>Alles in één bezoek</div>
 
           <h1 className={s.heroH1}>

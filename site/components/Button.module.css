@@ -18,8 +18,16 @@
 
 .arrow { font-size: 18px; line-height: 1; }
 
-.primary { background: var(--red); color: #fff; }
-.primary:hover { background: var(--red-deep); }
+.primary {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 0 0 rgba(228,0,43,0);
+  transition: background 0.15s, transform 0.12s, box-shadow 0.25s;
+}
+.primary:hover {
+  background: var(--red-deep);
+  box-shadow: 0 8px 30px rgba(228,0,43,0.35);
+}
 
 .ghost {
   background: transparent;

@@ -73,6 +73,11 @@
   letter-spacing: 0.02em;
   display: block;
   color: #fff;
+  transition: text-shadow 0.25s;
+}
+
+.callNumber:hover {
+  text-shadow: 0 0 30px rgba(255,255,255,0.6);
 }
 
 .callBtn {

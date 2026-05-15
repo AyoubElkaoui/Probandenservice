@@ -22,12 +22,28 @@
   position: relative;
   overflow: hidden;
   color: var(--text);
-  transition: background 0.18s;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+  border-top: 2px solid transparent;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(228,0,43,0.04) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
 }
 
 .card:hover {
-  background: var(--surface-2);
+  background: var(--bg);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  border-top-color: var(--red);
 }
+
+.card:hover::before { opacity: 1; }
 
 .featured {
   background: var(--red);
