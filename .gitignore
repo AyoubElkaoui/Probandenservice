@@ -1,0 +1,27 @@
+# Node modules
+site/node_modules/
+node_modules/
+
+# Next.js build output
+site/.next/
+site/out/
+
+# Environment variables
+site/.env
+site/.env.local
+site/.env.*.local
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*

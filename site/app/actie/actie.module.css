@@ -1,0 +1,984 @@
+/* ─────────────────────────────────────────────────────────
+   Probandenservice — Actie / Campaign Pages Shared CSS
+   ───────────────────────────────────────────────────────── */
+
+/* ── Hero ──────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    160deg,
+    rgba(10, 10, 11, 0.78) 0%,
+    rgba(10, 10, 11, 0.55) 50%,
+    rgba(10, 10, 11, 0.72) 100%
+  );
+}
+
+.heroOverlayCool {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    150deg,
+    rgba(4, 14, 30, 0.90) 0%,
+    rgba(6, 18, 38, 0.70) 45%,
+    rgba(4, 14, 30, 0.85) 100%
+  );
+}
+
+.heroOverlayDark {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 11, 0.92) 0%,
+    rgba(10, 10, 11, 0.65) 60%,
+    rgba(10, 10, 11, 0.90) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 90vh;
+  padding: 64px var(--gutter) 80px;
+  max-width: 860px;
+}
+
+/* ── Split Hero (vakantiecheck) ────────────────────────── */
+
+.heroSplit {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 90vh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.heroSplitCopy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px var(--gutter) 80px;
+  background: var(--bg);
+}
+
+.heroSplitImg {
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSplitImg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(10, 10, 11, 0.7) 0%,
+    transparent 40%
+  );
+  z-index: 1;
+}
+
+@media (max-width: 860px) {
+  .heroSplit {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .heroSplitImg {
+    min-height: 45vh;
+  }
+  .heroSplitCopy {
+    padding: 56px var(--gutter);
+  }
+}
+
+/* ── Hero — dark minimal (road-trip) ───────────────────── */
+
+.heroDark {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.heroDarkContent {
+  position: relative;
+  z-index: 2;
+  padding: 80px var(--gutter);
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* ── Hero Typography ───────────────────────────────────── */
+
+.heroH1 {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 9vw, 120px);
+  line-height: 0.88;
+  margin: 0 0 32px;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.heroH1Accent {
+  color: var(--red);
+}
+
+.heroH1Blue {
+  color: #38bdf8;
+}
+
+.heroLede {
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(245, 243, 238, 0.72);
+  max-width: 520px;
+  margin: 0 0 40px;
+}
+
+.heroCtaRow {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ── Service label tag ─────────────────────────────────── */
+
+.serviceTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(228, 0, 43, 0.45);
+  color: var(--red);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  margin-bottom: 28px;
+  width: fit-content;
+}
+
+.serviceTagBlue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  margin-bottom: 28px;
+  width: fit-content;
+}
+
+/* ── Big Statement Section ─────────────────────────────── */
+
+.statementSection {
+  padding: 80px 0;
+  background: var(--surface);
+  overflow: hidden;
+  position: relative;
+}
+
+.statementSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--red);
+}
+
+.bigStatement {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 58px);
+  line-height: 1.1;
+  color: var(--text);
+  margin: 0;
+  font-weight: 400;
+  max-width: 900px;
+}
+
+.bigStatement em {
+  font-style: normal;
+  color: var(--red);
+}
+
+/* ── 3-col service highlights ──────────────────────────── */
+
+.highlightGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 56px;
+}
+
+@media (max-width: 860px) {
+  .highlightGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.highlightItem {
+  padding: 40px 32px;
+  background: var(--surface-2);
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, background 0.15s;
+}
+
+.highlightItem:hover {
+  border-bottom-color: var(--red);
+  background: rgba(228, 0, 43, 0.04);
+}
+
+.highlightIcon {
+  color: var(--red);
+  margin-bottom: 20px;
+}
+
+.highlightIconBlue {
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+.highlightTitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+
+.highlightText {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Info band (which tire fits you?) ──────────────────── */
+
+.infoSection {
+  padding: 96px 0;
+  background: var(--bg);
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 48px;
+}
+
+@media (max-width: 720px) {
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.infoBlock {
+  padding: 40px 36px;
+  background: var(--surface-2);
+}
+
+.infoBlockLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.infoBlockLabelBlue {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.infoBlockTitle {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 44px);
+  line-height: 0.95;
+  color: var(--text);
+  margin: 0 0 16px;
+  font-weight: 400;
+}
+
+.infoBlockText {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── CTA Bar ───────────────────────────────────────────── */
+
+.ctaBar {
+  background: var(--red);
+  padding: 72px 0;
+}
+
+.ctaBarInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.ctaBarText {
+  flex: 1;
+  min-width: 280px;
+}
+
+.ctaBarH2 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 0.9;
+  color: #fff;
+  margin: 0 0 12px;
+  font-weight: 400;
+}
+
+.ctaBarSub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ctaBarActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.ctaBarPhone {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 44px);
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  transition: opacity 0.15s;
+}
+
+.ctaBarPhone:hover {
+  opacity: 0.85;
+}
+
+.ctaBarNote {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  text-align: right;
+}
+
+@media (max-width: 720px) {
+  .ctaBarInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ctaBarActions {
+    align-items: flex-start;
+  }
+  .ctaBarNote {
+    text-align: left;
+  }
+}
+
+/* ── Numbered list (road-trip) ─────────────────────────── */
+
+.numberedList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 64px;
+}
+
+.numberItem {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: start;
+  background: var(--surface-2);
+  padding: 48px 48px 48px 0;
+  gap: 40px;
+  transition: background 0.15s;
+}
+
+.numberItem:hover {
+  background: rgba(228, 0, 43, 0.04);
+}
+
+@media (max-width: 720px) {
+  .numberItem {
+    grid-template-columns: 80px 1fr;
+    padding: 36px 24px 36px 0;
+    gap: 20px;
+  }
+}
+
+.numberN {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 10vw, 120px);
+  line-height: 0.85;
+  color: rgba(228, 0, 43, 0.18);
+  text-align: center;
+  padding-left: 40px;
+  align-self: start;
+}
+
+@media (max-width: 720px) {
+  .numberN {
+    font-size: 64px;
+    padding-left: 24px;
+  }
+}
+
+.numberContent {
+  padding-top: 12px;
+}
+
+.numberTitle {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 44px);
+  line-height: 0.95;
+  color: var(--text);
+  margin: 0 0 14px;
+  font-weight: 400;
+}
+
+.numberText {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 560px;
+}
+
+/* ── Quote block ───────────────────────────────────────── */
+
+.quoteSection {
+  padding: 96px 0;
+  background: var(--surface-2);
+}
+
+.quoteBlock {
+  max-width: 800px;
+  padding: 0 var(--gutter);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quoteText {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 42px);
+  line-height: 1.15;
+  color: var(--text);
+  margin: 0 0 28px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quoteText::before {
+  content: '\201C';
+  color: var(--red);
+}
+
+.quoteText::after {
+  content: '\201D';
+  color: var(--red);
+}
+
+.quoteAttr {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ── Trust strip ───────────────────────────────────────── */
+
+.trustStrip {
+  padding: 0;
+  background: var(--surface);
+  border-top: 1px solid rgba(245, 243, 238, 0.06);
+  border-bottom: 1px solid rgba(245, 243, 238, 0.06);
+}
+
+.trustStripInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+@media (max-width: 720px) {
+  .trustStripInner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.trustBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 36px 16px;
+  text-align: center;
+  background: var(--surface-2);
+}
+
+.trustBadgeNum {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1;
+  color: var(--text);
+}
+
+.trustBadgeNumRed {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1;
+  color: var(--red);
+}
+
+.trustBadgeLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ── Sections ──────────────────────────────────────────── */
+
+.section {
+  padding: 96px 0;
+  background: var(--bg);
+}
+
+.sectionAlt {
+  padding: 96px 0;
+  background: var(--surface);
+}
+
+.sectionDark {
+  padding: 96px 0;
+  background: var(--surface-2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.sectionEyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.sectionH2 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.5vw, 76px);
+  line-height: 0.9;
+  margin: 0 0 48px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+/* ── Checklist items ───────────────────────────────────── */
+
+.checkList {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.checkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px 28px;
+  background: var(--surface-2);
+}
+
+.checkIcon {
+  color: var(--red);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.checkItemTitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 5px;
+}
+
+.checkItemText {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ── Airco two-column info ─────────────────────────────── */
+
+.aircoTypeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 48px;
+}
+
+@media (max-width: 720px) {
+  .aircoTypeGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aircoTypeBlock {
+  padding: 40px 36px;
+  background: var(--surface-2);
+  border-top: 3px solid rgba(56, 189, 248, 0.3);
+}
+
+.aircoTypeTag {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.aircoTypeTitle {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px);
+  color: var(--text);
+  font-weight: 400;
+  margin: 0 0 14px;
+  line-height: 1;
+}
+
+.aircoTypeText {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Service includes grid ─────────────────────────────── */
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2px;
+  margin-top: 48px;
+}
+
+.serviceItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 28px;
+  background: var(--surface-2);
+  transition: background 0.15s;
+}
+
+.serviceItem:hover {
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.serviceItemIcon {
+  color: #38bdf8;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.serviceItemIconRed {
+  color: var(--red);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.serviceItemText h3 {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 5px;
+  color: var(--text);
+}
+
+.serviceItemText p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ── Timeline / process bar ────────────────────────────── */
+
+.timelineSection {
+  padding: 96px 0;
+  background: var(--surface);
+}
+
+.timelineGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 56px;
+}
+
+@media (max-width: 720px) {
+  .timelineGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.timelineStep {
+  padding: 40px 32px;
+  background: var(--bg);
+  position: relative;
+}
+
+.timelineStep::after {
+  content: '→';
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: rgba(228, 0, 43, 0.4);
+  z-index: 1;
+}
+
+.timelineStep:last-child::after {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .timelineStep::after {
+    content: '↓';
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: -18px;
+    transform: translateX(-50%);
+  }
+}
+
+.timelineNum {
+  font-family: var(--font-display);
+  font-size: 72px;
+  line-height: 0.85;
+  color: var(--red);
+  opacity: 0.22;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.timelineTitle {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+
+.timelineText {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Fact highlight ────────────────────────────────────── */
+
+.factBar {
+  background: rgba(56, 189, 248, 0.07);
+  border-left: 3px solid #38bdf8;
+  padding: 28px 32px;
+  margin-top: 48px;
+}
+
+.factBarTitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: #38bdf8;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.factBarText {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Honest note ───────────────────────────────────────── */
+
+.honestNote {
+  background: var(--surface-2);
+  border-left: 3px solid var(--red);
+  padding: 28px 32px;
+  margin-top: 48px;
+}
+
+.honestNoteTitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.honestNoteText {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* ── Reviews section ───────────────────────────────────── */
+
+.reviewsSection {
+  padding: 96px 0;
+  background: var(--bg);
+}
+
+.reviewsHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+/* ── Brands row ────────────────────────────────────────── */
+
+.brandsSection {
+  padding: 56px 0;
+  background: var(--surface-2);
+  border-top: 1px solid rgba(245, 243, 238, 0.05);
+}
+
+.brandsRow {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.brandItem {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: 0.05em;
+  color: rgba(245, 243, 238, 0.15);
+  padding: 18px 28px;
+  border-right: 1px solid rgba(245, 243, 238, 0.06);
+  transition: color 0.2s;
+}
+
+.brandItem:last-child {
+  border-right: none;
+}
+
+.brandItem:hover {
+  color: rgba(245, 243, 238, 0.55);
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+
+@media (max-width: 980px) {
+  .heroContent {
+    padding: 48px var(--gutter) 64px;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: 100svh;
+  }
+  .heroContent {
+    min-height: 100svh;
+  }
+  .heroH1 {
+    font-size: clamp(48px, 13vw, 80px);
+  }
+  .heroCtaRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,36 @@
+.btn {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 18px 28px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.12s;
+  text-align: left;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.arrow { font-size: 18px; line-height: 1; }
+
+.primary { background: var(--red); color: #fff; }
+.primary:hover { background: var(--red-deep); }
+
+.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--line-2);
+}
+.ghost:hover { background: var(--surface); border-color: var(--text); }
+
+.outline {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--text);
+}
+.outline:hover { background: var(--text); color: var(--bg); }

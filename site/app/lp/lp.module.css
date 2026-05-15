@@ -1,0 +1,911 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Probandenservice — Shared Landing Page Styles
+   lp.module.css — used across all /lp/* pages
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── HERO ─────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.heroImgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    105deg,
+    rgba(10, 10, 11, 0.93) 0%,
+    rgba(10, 10, 11, 0.78) 55%,
+    rgba(10, 10, 11, 0.45) 100%
+  );
+}
+
+/* Red urgency overlay variant for spoedservice */
+.heroOverlayRed {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    105deg,
+    rgba(164, 0, 32, 0.88) 0%,
+    rgba(228, 0, 43, 0.72) 50%,
+    rgba(10, 10, 11, 0.55) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 64px;
+  padding-bottom: 80px;
+}
+
+/* ─── TRUST BAR ─────────────────────────────────────────────────── */
+
+.trustBar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.trustItem {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: rgba(245, 243, 238, 0.7);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.trustItem::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background: rgba(255,255,255,0.2);
+}
+
+.trustItem:first-child::before {
+  display: none;
+}
+
+.trustStar {
+  color: #f5c542;
+}
+
+/* ─── HERO HEADING ──────────────────────────────────────────────── */
+
+.heroH1 {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 8vw, 120px);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0 0 24px 0;
+  max-width: 16ch;
+}
+
+.heroH1Red {
+  color: var(--red);
+}
+
+.heroTagline {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 52ch;
+  margin: 0 0 36px 0;
+}
+
+/* ─── PRICE TAG ─────────────────────────────────────────────────── */
+
+.priceTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  margin-bottom: 32px;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
+  padding-right: 28px;
+}
+
+.priceTagWhite {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  clip-path: none;
+  padding-right: 20px;
+}
+
+/* ─── HERO CTAs ─────────────────────────────────────────────────── */
+
+.heroCtas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ─── BENEFITS STRIP ────────────────────────────────────────────── */
+
+.benefits {
+  background: var(--surface);
+  padding: 72px var(--gutter);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.benefitsInner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 40px;
+}
+
+.benefitsGrid4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.benefit {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.benefitIcon {
+  color: var(--red);
+  flex-shrink: 0;
+}
+
+.benefitTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.benefitText {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── SECTION BASE ──────────────────────────────────────────────── */
+
+.section {
+  padding: 96px var(--gutter);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.sectionDark {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionDarkInner {
+  padding: 96px var(--gutter);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.eyebrow::before {
+  content: '─── ';
+}
+
+.sectionH2 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 72px);
+  line-height: 0.92;
+  color: var(--text);
+  margin: 0 0 24px 0;
+}
+
+.sectionIntro {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 56ch;
+  margin: 0;
+}
+
+/* ─── DETAILS / 2-COL LAYOUT ────────────────────────────────────── */
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.detailsGridReverse {
+  direction: rtl;
+}
+
+.detailsGridReverse > * {
+  direction: ltr;
+}
+
+.detailsCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.detailsBlock {
+  border-left: 3px solid var(--red);
+  padding-left: 20px;
+}
+
+.detailsBlockH3 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin: 0 0 8px 0;
+  line-height: 1.1;
+}
+
+.detailsBlockP {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.detailImgWrap {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.detailImgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    rgba(10,10,11,0.6) 100%
+  );
+  z-index: 1;
+}
+
+/* ─── PRICING CTA ───────────────────────────────────────────────── */
+
+.pricing {
+  background: var(--surface-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.pricingInner {
+  padding: 96px var(--gutter);
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.pricingCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.priceCard {
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.priceCardRed {
+  background: var(--red);
+  border-color: transparent;
+}
+
+.priceCardLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.priceCardLabelWhite {
+  color: rgba(255,255,255,0.7);
+}
+
+.priceAmount {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 8vw, 112px);
+  line-height: 1;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.priceAmountRed {
+  color: var(--red);
+}
+
+.priceAmountWhite {
+  color: #fff;
+}
+
+.priceUnit {
+  font-size: 16px;
+  color: var(--muted);
+  font-family: var(--font-body);
+  letter-spacing: 0;
+}
+
+.priceUnitWhite {
+  color: rgba(255,255,255,0.7);
+}
+
+.includes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.includesItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.includesItemWhite {
+  color: #fff;
+}
+
+.includesCheck {
+  color: var(--red);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.includesCheckWhite {
+  color: rgba(255,255,255,0.9);
+}
+
+/* ─── PROCESS SECTION ───────────────────────────────────────────── */
+
+.process {
+  padding: 96px var(--gutter);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.processSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.processStep {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
+
+.processStep:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.processNumber {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1;
+  color: var(--red);
+  opacity: 0.6;
+}
+
+.processStepH3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin: 0 0 8px 0;
+  line-height: 1.1;
+}
+
+.processStepP {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ─── REVIEWS SECTION ───────────────────────────────────────────── */
+
+.reviewsSection {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+.reviewsSectionInner {
+  padding: 96px var(--gutter);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.reviewsHead {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 32px;
+  margin-bottom: 56px;
+}
+
+.bigStars {
+  text-align: right;
+}
+
+.starLine {
+  font-size: 28px;
+  color: #f5c542;
+  letter-spacing: 2px;
+}
+
+.starSub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* ─── FAQ ───────────────────────────────────────────────────────── */
+
+.faq {
+  padding: 96px var(--gutter);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faqItem {
+  border-top: 1px solid var(--line);
+}
+
+.faqItem:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.faqItem summary {
+  list-style: none;
+  padding: 24px 0;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  line-height: 1.2;
+  user-select: none;
+}
+
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqItem summary::after {
+  content: '+';
+  font-family: var(--font-body);
+  font-size: 24px;
+  color: var(--red);
+  flex-shrink: 0;
+  line-height: 1;
+  font-weight: 300;
+  transition: transform 0.2s;
+}
+
+.faqItem[open] summary::after {
+  content: '−';
+}
+
+.faqAnswer {
+  padding: 0 0 24px 0;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ─── FINAL CTA ─────────────────────────────────────────────────── */
+
+.finalCta {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.finalCtaInner {
+  padding: 96px var(--gutter);
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 64px;
+  align-items: center;
+}
+
+.finalCtaH2 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 80px);
+  line-height: 0.92;
+  color: var(--text);
+  margin: 0 0 16px 0;
+}
+
+.finalCtaP {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+  max-width: 48ch;
+}
+
+.finalCtaCtas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.finalCtaAddress {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  line-height: 1.8;
+  text-align: right;
+}
+
+/* ─── BRANDS ROW ────────────────────────────────────────────────── */
+
+.brands {
+  background: var(--surface-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 32px var(--gutter);
+}
+
+.brandsInner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.brandsLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-right: 8px;
+}
+
+.brandPill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+  border: 1px solid var(--line-2);
+  padding: 4px 12px;
+}
+
+/* ─── STAT ROW ──────────────────────────────────────────────────── */
+
+.statRow {
+  display: flex;
+  gap: 40px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statN {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1;
+  color: var(--red);
+}
+
+.statL {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ─── URGENCY BANNER (spoedservice) ─────────────────────────────── */
+
+.urgencyBanner {
+  background: var(--red);
+  padding: 20px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.urgencyBannerInner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.urgencyDot {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+.urgencyText {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.urgencyNumber {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+/* ─── DETAIL FEATURE BOX ────────────────────────────────────────── */
+
+.featureBox {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.featureBoxTitle {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.featureBoxList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.featureBoxItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.featureBoxItem::before {
+  content: '→';
+  color: var(--red);
+  flex-shrink: 0;
+}
+
+/* ─── RESPONSIVE ────────────────────────────────────────────────── */
+
+@media (max-width: 1100px) {
+  .detailsGrid,
+  .pricingInner,
+  .processGrid,
+  .faqGrid,
+  .finalCtaInner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .detailsGridReverse {
+    direction: ltr;
+  }
+
+  .reviewsHead {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .bigStars {
+    text-align: left;
+  }
+
+  .starSub {
+    text-align: left;
+  }
+
+  .finalCtaAddress {
+    text-align: left;
+  }
+}
+
+@media (max-width: 900px) {
+  .heroContent {
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+
+  .benefits {
+    padding: 56px var(--gutter);
+  }
+
+  .benefitsGrid,
+  .benefitsGrid4 {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .section,
+  .sectionDarkInner,
+  .process,
+  .faq,
+  .finalCtaInner,
+  .reviewsSectionInner {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .pricingInner {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .detailImgWrap {
+    height: 300px;
+  }
+
+  .priceCard {
+    padding: 32px;
+  }
+
+  .statRow {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .benefitsGrid,
+  .benefitsGrid4 {
+    grid-template-columns: 1fr;
+  }
+
+  .trustBar {
+    gap: 12px;
+  }
+
+  .heroCtas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .finalCtaCtas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .urgencyBanner {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

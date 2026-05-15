@@ -1,0 +1,125 @@
+.manifesto {
+  background: var(--surface-2);
+  padding: 110px 0;
+}
+
+.manifestoInner {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .manifestoInner { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 6vw, 76px);
+  line-height: 0.95;
+  margin: 16px 0 0;
+  font-weight: 400;
+}
+
+.h2Section {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 6vw, 84px);
+  line-height: 0.95;
+  margin: 12px 0 48px;
+  font-weight: 400;
+}
+
+.bigP {
+  font-size: 21px;
+  line-height: 1.55;
+  color: var(--text);
+  max-width: 620px;
+  margin-bottom: 24px;
+}
+
+.bigP strong { color: var(--red); font-weight: 600; }
+
+/* Photos */
+.photoGrid {
+  background: var(--bg);
+  padding: 64px var(--gutter);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .photoGrid { grid-template-columns: 1fr; }
+}
+
+.photoLeft { display: flex; }
+.photoLeft > * { width: 100%; }
+.photoRight { display: flex; flex-direction: column; gap: 24px; }
+.photoRight > * { flex: 1; }
+
+.photoSlot {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: block;
+}
+
+/* Timeline */
+.timeline {
+  background: var(--bg);
+  padding: 110px 0;
+}
+
+.timelineList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timelineRow {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 48px;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  align-items: baseline;
+}
+
+.timelineRow:last-child { border-bottom: 1px solid var(--line); }
+
+.timelineYear {
+  font-family: var(--font-display);
+  font-size: 72px;
+  color: var(--red);
+  line-height: 1;
+}
+
+.timelineTitle {
+  font-family: var(--font-display);
+  font-size: 36px;
+  margin: 0;
+  letter-spacing: 0.005em;
+}
+
+.timelineBody {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-top: 8px;
+  max-width: 640px;
+}
+
+@media (max-width: 720px) {
+  .timelineRow { grid-template-columns: 100px 1fr; gap: 24px; }
+  .timelineYear { font-size: 44px; }
+  .timelineTitle { font-size: 26px; }
+}
+
+/* Reviews */
+.reviews {
+  background: var(--surface-2);
+  padding: 110px 0;
+}

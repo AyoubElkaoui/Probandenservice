@@ -1,0 +1,9 @@
+.stripe {
+  --stripe-color: var(--red);
+  height: 4px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--stripe-color) 0 24px,
+    transparent 24px 32px
+  );
+}

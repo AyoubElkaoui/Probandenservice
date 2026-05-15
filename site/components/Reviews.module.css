@@ -1,0 +1,47 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--surface);
+  padding: 32px;
+  border-top: 2px solid var(--red);
+}
+
+.stars {
+  color: var(--red);
+  font-size: 14px;
+  letter-spacing: 0.2em;
+}
+
+.quote {
+  font-size: 17px;
+  line-height: 1.55;
+  margin-top: 18px;
+  color: var(--text);
+}
+
+.meta {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.name {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
