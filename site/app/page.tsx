@@ -15,77 +15,72 @@ export default function Home() {
     <>
       {/* ── HERO ───────────────────────────────────────────── */}
       <section className={styles.hero}>
-        {/* Wow-effecten laag */}
-        <div className={styles.heroEffects} aria-hidden="true">
-          <div className={styles.speedLines} />
-          <div className={styles.noiseOverlay} />
-          <div className={styles.tireWrap}>
-            <TireRim size={700} className={styles.tireRim} />
+
+        {/* 1. Auto-foto als volledige achtergrond */}
+        <div className={styles.heroBg} aria-hidden="true">
+          <Image
+            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=90"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center right' }}
+          />
+          {/* Gradient: pikzwart links (tekst leesbaar) → auto zichtbaar rechts */}
+          <div className={styles.heroGradient} />
+          {/* Vignette boven en onder */}
+          <div className={styles.heroVignette} />
+        </div>
+
+        {/* 2. Speed lines — bewegen van rechts naar links */}
+        <div className={styles.speedLines} aria-hidden="true" />
+
+        {/* 3. Roterend bandenwiel — ZICHTBAAR rechts op de auto */}
+        <div className={styles.tireWrap} aria-hidden="true">
+          <TireRim size={640} className={styles.tireRim} />
+        </div>
+
+        {/* 4. Tekst content — links */}
+        <div className={styles.heroContent}>
+          <div className={styles.heroFlags}>
+            <span className={styles.flagSpoed}>● LIVE · 24/7</span>
+            <span className={styles.flagInfo}>CULEMBORG · UTRECHT · NIEUWEGEIN</span>
+          </div>
+
+          <h1 className={styles.heroH1}>
+            BANDEN.<br />
+            UITLIJNEN.<br />
+            <span className={styles.red}>SPOED.</span>
+          </h1>
+
+          <p className={styles.heroLede}>
+            Lekke band midden in de nacht? Nieuwe banden nodig?
+            Of uitlijnen omdat je stuur trekt? Wij zijn er. Altijd.
+          </p>
+
+          <div className={styles.heroCtas}>
+            <Button href={`tel:${site.emergencyPhone.tel}`}>
+              Spoed: {site.emergencyPhone.display}
+            </Button>
+            <Button href="/contact" variant="ghost">Maak een afspraak</Button>
+          </div>
+
+          <div className={styles.statRow}>
+            <div className={styles.stat}>
+              <div className={styles.statN}>24/7</div>
+              <div className={styles.statL}>bereikbaar voor spoed</div>
+            </div>
+            <div className={styles.stat}>
+              <div className={styles.statN}>80</div>
+              <div className={styles.statL}>km/u tijdelijke band</div>
+            </div>
+            <div className={styles.stat}>
+              <div className={styles.statN}>14</div>
+              <div className={styles.statL}>steden in de regio</div>
+            </div>
           </div>
         </div>
 
-        <div className={styles.heroInner}>
-          <div className={styles.heroCopy}>
-            <div className={styles.heroFlags}>
-              <span className={styles.flagSpoed}>● 24/7 SPOED</span>
-              <span className={styles.flagInfo}>
-                DESKUNDIGE TECHNICI · CULEMBORG
-              </span>
-            </div>
-            <h1 className={styles.heroH1}>
-              BANDEN.<br />
-              UITLIJNEN.<br />
-              <span className={styles.red}>SPOED.</span>
-            </h1>
-            <p className={styles.heroLede}>
-              Lekke band midden in de nacht? Nieuwe banden nodig?
-              Of uitlijnen omdat je stuur trekt? Wij zijn er.
-              Culemborg, Utrecht, Nieuwegein — altijd bereikbaar.
-            </p>
-            <div className={styles.heroCtas}>
-              <Button href={`tel:${site.emergencyPhone.tel}`}>
-                Spoed: {site.emergencyPhone.display}
-              </Button>
-              <Button href="/contact" variant="ghost">Maak een afspraak</Button>
-            </div>
-
-            <div className={styles.statRow}>
-              <div className={styles.stat}>
-                <div className={styles.statN}>24/7</div>
-                <div className={styles.statL}>bereikbaar voor spoed</div>
-              </div>
-              <div className={styles.stat}>
-                <div className={styles.statN}>80</div>
-                <div className={styles.statL}>km/u tijdelijke band</div>
-              </div>
-              <div className={styles.stat}>
-                <div className={styles.statN}>14</div>
-                <div className={styles.statL}>steden in de regio</div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.heroMedia}>
-            <div className={styles.heroImgWrap}>
-              <Image
-                src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=85"
-                alt="Sportieve auto bij Probandenservice Culemborg — banden, uitlijnen en spoedservice"
-                fill
-                priority
-                sizes="(max-width: 1100px) 100vw, 50vw"
-                style={{ objectFit: 'cover', objectPosition: 'center 60%' }}
-              />
-              <div className={styles.heroImgOverlay} aria-hidden="true" />
-            </div>
-            <div className={styles.specCard}>
-              <div className={styles.specCheck} aria-hidden="true">✓</div>
-              <div>
-                <div className={styles.specTitle}>Servicegarantie</div>
-                <div className={styles.specSub}>24/7 SPOED · CULEMBORG</div>
-              </div>
-            </div>
-          </div>
-        </div>
         <Stripe />
       </section>
 

@@ -144,7 +144,8 @@
 /* ── CONTACT FORM ──────────────────────────────────────── */
 
 .formSection {
-  background: var(--surface-2);
+  background: var(--bg);
+  border-top: 3px solid var(--red);
   padding: 96px 0 120px;
 }
 
