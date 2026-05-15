@@ -66,18 +66,21 @@ export default function Home() {
           </div>
         </div>
 
-        {/* RECHTS: auto als floating product shot */}
+        {/* RECHTS: Mercedes-AMG moodbild — zweeft op transparante achtergrond */}
         <div className={styles.heroRight} aria-hidden="true">
+          {/* Rode glow achter de velg — geeft diepte en brand-feel */}
+          <div className={styles.heroGlow} />
+          {/* Subtiele rode vegen voor sfeer */}
+          <div className={styles.heroAura} />
+          {/* Moodbild MET transparante achtergrond — zweeft letterlijk */}
           <Image
-            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=90"
+            src="/moodbild-alpha.webp"
             alt=""
             fill
             priority
             sizes="50vw"
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            style={{ objectFit: 'contain', objectPosition: 'center bottom' }}
           />
-          {/* Fade overlay: auto emergeert uit het donker — floating effect */}
-          <div className={styles.heroCarFade} />
         </div>
 
         <Stripe />

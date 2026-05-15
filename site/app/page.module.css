@@ -37,27 +37,48 @@
   background: var(--bg);
 }
 
-/* RECHTS: auto als floating product shot */
+/* RECHTS: Mercedes-AMG moodbild als floating product shot */
 .heroRight {
   position: relative;
   overflow: hidden;
   background: var(--bg);
+  /* Zorgt dat next/image fill werkt */
+  display: flex;
+  align-items: flex-end;
 }
 
-/* Fade overlay op de auto — emergeert uit het donker aan alle kanten */
-.heroCarFade {
+/* Rode glow — diepte en brand-feel achter het wiel */
+.heroGlow {
+  position: absolute;
+  width: 75%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(228, 0, 43, 0.20) 0%,
+    rgba(228, 0, 43, 0.08) 45%,
+    transparent 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Subtiele veeg — geeft extra sfeer */
+.heroAura {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   background:
-    /* Links fade: blend met tekst-sectie */
-    linear-gradient(90deg,  rgba(10,10,11,0.95) 0%, rgba(10,10,11,0.4) 30%, transparent 60%),
-    /* Boven fade */
-    linear-gradient(180deg, rgba(10,10,11,0.7) 0%, transparent 30%),
-    /* Onder fade */
-    linear-gradient(0deg,   rgba(10,10,11,0.8) 0%, transparent 40%),
-    /* Rechts fade */
-    linear-gradient(270deg, rgba(10,10,11,0.4) 0%, transparent 40%);
+    /* Linker overgang: blend naadloos met tekst-sectie */
+    linear-gradient(90deg, rgba(10,10,11,0.9) 0%, rgba(10,10,11,0.3) 25%, transparent 50%),
+    /* Boven */
+    linear-gradient(180deg, rgba(10,10,11,0.5) 0%, transparent 35%),
+    /* Onder: grond-lijn effect */
+    linear-gradient(0deg, rgba(10,10,11,0.6) 0%, transparent 30%);
+  pointer-events: none;
 }
 
 /* Horizontale lichtsporen */
@@ -106,15 +127,15 @@
   100% { opacity: 0; transform: translateX(1%); }
 }
 
-/* Roterend wiel — rechts in de heroLeft sectie */
+/* Roterend wiel SVG — links, achter de tekst, subtiel accent */
 .tireWrap {
   position: absolute;
-  right: -140px;
+  right: -180px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.3;
 }
 
 .tireRim {
