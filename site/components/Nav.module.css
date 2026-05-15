@@ -13,37 +13,20 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  flex-shrink: 0;
 }
 
-.mark {
-  width: 42px;
-  height: 42px;
-  background: var(--red);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 24px;
-  transform: skewX(-8deg);
-}
-
-.wordmark {
-  font-family: var(--font-display);
-  font-size: 22px;
-  letter-spacing: 0.04em;
-  line-height: 1;
+.logo {
+  height: 48px;
+  width: auto;
   display: block;
+  object-fit: contain;
+  /* Logo is waarschijnlijk licht/wit — filter inverteert niet nodig als transparante PNG */
 }
 
-.tagline {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 0.15em;
-  margin-top: 2px;
-  display: block;
+/* Zorg dat het logo niet te klein wordt op mobiel */
+@media (max-width: 480px) {
+  .logo { height: 38px; }
 }
 
 .links {

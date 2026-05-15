@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { site } from '@/lib/site';
 import { services } from '@/lib/services';
 import { Stripe } from './Stripe';
@@ -10,8 +11,15 @@ export function Footer() {
       <Stripe />
       <div className={styles.grid}>
         <div className={styles.brand}>
-          <div className={styles.wordmark}>PROBANDENSERVICE</div>
-          <div className={styles.tagline}>BANDEN · UITLIJNEN · SPOED</div>
+          <Link href="/" aria-label={site.name}>
+            <Image
+              src="/logo.png"
+              alt={site.name}
+              width={160}
+              height={72}
+              className={styles.logo}
+            />
+          </Link>
           <p className={styles.about}>
             Jouw bandenspecialist in {site.address.city} en omgeving. Elke dag open, 24/7 spoedservice.
           </p>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { site } from '@/lib/site';
 import styles from './Nav.module.css';
 
@@ -15,11 +16,14 @@ export function Nav() {
   return (
     <nav className={styles.nav}>
       <Link href="/" className={styles.brand} aria-label={`${site.name} — naar home`}>
-        <span className={styles.mark} aria-hidden="true">PS</span>
-        <span>
-          <span className={styles.wordmark}>PROBANDENSERVICE</span>
-          <span className={styles.tagline}>BANDEN · UITLIJNEN · SPOED</span>
-        </span>
+        <Image
+          src="/logo.png"
+          alt={site.name}
+          width={160}
+          height={72}
+          priority
+          className={styles.logo}
+        />
       </Link>
 
       <ul className={styles.links}>
